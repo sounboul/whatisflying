@@ -5,7 +5,7 @@
 # What is flying?
 
 [![GitHub license](https://img.shields.io/github/license/jbroutier/whatisflying)](https://github.com/jbroutier/whatisflying/blob/master/LICENSE)
-[![GitHub release](https://img.shields.io/github/release/jbroutier/whatisflying)](https://github.com/jbroutier/whatisflying/releases/)
+[![GitHub release](https://img.shields.io/github/release/jbroutier/whatisflying?include_prereleases)](https://github.com/jbroutier/whatisflying/releases/)
 [![Website whatisflying.com](https://img.shields.io/website?url=https%3A%2F%2Fwhatisflying.com)](https://whatisflying.com/)
 [![PHP version](https://img.shields.io/badge/php-8.0-787cb5)](https://github.com/jbroutier/whatisflying)
 [![Codecov](https://img.shields.io/codecov/c/github/jbroutier/whatisflying?token=41UDAFWPF2)](https://codecov.io/gh/jbroutier/whatisflying)
