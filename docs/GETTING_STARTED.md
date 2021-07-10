@@ -138,6 +138,12 @@ Clone the repository:
 git clone git@github.com:jbroutier/whatisflying.git .
 ```
 
+Create directories:
+
+```bash
+mkdir -p /usr/share/nginx/html/{public/cache,public/upload,var}
+```
+
 Set file permissions:
 
 ```bash
