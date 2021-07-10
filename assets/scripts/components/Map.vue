@@ -2,7 +2,7 @@
   <MapLayout>
 
     <template #map>
-      <div class="map" id="map"></div>
+      <div class="map" id="map" :key="uuid"></div>
     </template>
 
     <template #controls>
@@ -74,6 +74,7 @@ import { usePrecipitationsLayer } from '@scripts/components/map/weather/Precipit
 import { useTemperatureLayer } from '@scripts/components/map/weather/TemperatureLayer'
 import { useWindSpeedLayer } from '@scripts/components/map/weather/WindSpeedLayer'
 import MapLayout from '@scripts/layouts/MapLayout'
+import * as uuid from 'uuid'
 import { provide, ref } from 'vue'
 
 export default {
@@ -162,6 +163,11 @@ export default {
       ...useTemperatureLayer(map),
       ...useWindSpeedLayer(map),
       ...useZoom(map)
+    }
+  },
+  data () {
+    return {
+      uuid: uuid.v4()
     }
   },
   mounted () {
