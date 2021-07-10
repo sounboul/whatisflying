@@ -1,4 +1,4 @@
 framework:
     router:
-        default_uri: https://dev.whatisflying.com
+        default_uri: '%env(BASE_URL)%'
         utf8: true
