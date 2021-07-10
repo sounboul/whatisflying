@@ -266,7 +266,7 @@
 
                           <template v-if="aircraftType.mainRotorDiameter">
                             {{ $n($m.round(aircraftType.mainRotorDiameter, 2)) }}&nbsp;m /
-                            {{ $n($m.round($m.unit(aircraftType.mainRotorDiameter, 'm').toNumber('ft'), 2)) }}
+                            {{ $n($m.round($m.unit(aircraftType.mainRotorDiameter, 'm').toNumber('ft'), 2)) }}&nbsp;ft
                           </template>
                           <template v-else>
                             -
