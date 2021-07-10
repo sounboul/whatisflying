@@ -1,0 +1,29 @@
+.map-scale {
+  background: $white;
+  border-radius: $border-radius;
+  bottom: 10px;
+  box-shadow: $box-shadow;
+  left: 10px;
+  padding: 0.3125rem;
+  position: absolute;
+}
+
+.map-scale-inner {
+  border: 2px solid $body-color;
+  border-top: none;
+  font-size: 0.75rem;
+  height: 10px;
+  line-height: 0.25;
+  text-align: center;
+}
+
+[data-theme='dark'] {
+  .map-scale {
+    background: $dark;
+    color: $light;
+  }
+
+  .map-scale-inner {
+    border-color: $light;
+  }
+}

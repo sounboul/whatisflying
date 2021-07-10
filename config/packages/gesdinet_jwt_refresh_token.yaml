@@ -1,0 +1,5 @@
+gesdinet_jwt_refresh_token:
+    firewall: api
+    ttl: 2592000
+    user_provider: App\Security\UserProvider
+    user_checker: App\Security\UserChecker

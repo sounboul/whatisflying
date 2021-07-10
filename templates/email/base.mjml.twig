@@ -1,0 +1,24 @@
+{% mjml %}
+    <!--suppress InvalidUrlAttribute -->
+    <mjml>
+        <mj-body background-color="#f6f8fa">
+            <mj-section background-color="#fff" padding-top="0">
+                <mj-column>
+                    <mj-image src="{{ absolute_url(asset('assets/images/email-header.png')) }}"
+                              width="600px" height="315px" padding="0"/>
+                </mj-column>
+            </mj-section>
+            <mj-section background-color="#fff">
+                <mj-column>
+                    <mj-text align="center" color="#0085ad" font-family="Heebo" font-size="32px">
+                        {{ subject }}
+                    </mj-text>
+                    <mj-spacer height="20px"/>
+
+                    {% block content %}{% endblock %}
+
+                </mj-column>
+            </mj-section>
+        </mj-body>
+    </mjml>
+{% endmjml %}

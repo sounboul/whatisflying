@@ -1,0 +1,37 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    Psr\Http\Message\RequestFactoryInterface:
+        class: Nyholm\Psr7\Factory\Psr17Factory
+
+    Psr\Http\Message\ResponseFactoryInterface:
+        class: Nyholm\Psr7\Factory\Psr17Factory
+
+    Psr\Http\Message\ServerRequestFactoryInterface:
+        class: Nyholm\Psr7\Factory\Psr17Factory
+
+    Psr\Http\Message\StreamFactoryInterface:
+        class: Nyholm\Psr7\Factory\Psr17Factory
+
+    Psr\Http\Message\UploadedFileFactoryInterface:
+        class: Nyholm\Psr7\Factory\Psr17Factory
+
+    Psr\Http\Message\UriFactoryInterface:
+        class: Nyholm\Psr7\Factory\Psr17Factory
+
+    Http\Message\MessageFactory:
+        class: Nyholm\Psr7\Factory\HttplugFactory
+
+    Http\Message\RequestFactory:
+        class: Nyholm\Psr7\Factory\HttplugFactory
+
+    Http\Message\ResponseFactory:
+        class: Nyholm\Psr7\Factory\HttplugFactory
+
+    Http\Message\StreamFactory:
+        class: Nyholm\Psr7\Factory\HttplugFactory
+
+    Http\Message\UriFactory:
+        class: Nyholm\Psr7\Factory\HttplugFactory

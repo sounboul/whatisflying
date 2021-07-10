@@ -1,0 +1,27 @@
+.map-attribution {
+  background: $white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  bottom: 10px;
+  font-size: 0.6875rem;
+  padding: 0.125rem 0.3125rem;
+  position: absolute;
+  right: 10px;
+
+  button {
+    display: none;
+  }
+
+  ul {
+    @include list-unstyled;
+
+    margin-bottom: 0;
+  }
+}
+
+[data-theme='dark'] {
+  .map-attribution {
+    background: $dark;
+    color: $light;
+  }
+}

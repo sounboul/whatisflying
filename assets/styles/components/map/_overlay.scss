@@ -1,0 +1,21 @@
+.map-overlay {
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  font-size: 0.875rem;
+  margin: 10px;
+  max-height: calc(100% - 20px);
+  max-width: 470px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: calc(100% - 20px);
+  z-index: 300;
+
+  @include media-breakpoint-up(md) {
+    width: 470px;
+  }
+
+  .simplebar-content > :not(:first-child) {
+    margin-top: 10px;
+  }
+}

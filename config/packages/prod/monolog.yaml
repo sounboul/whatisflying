@@ -1,0 +1,44 @@
+monolog:
+    channels: [ deprecation ]
+
+    handlers:
+        main:
+            type: fingers_crossed
+            handler: main_filtered
+            action_level: error
+            excluded_http_codes: [ 403, 404, 405 ]
+            buffer_size: 50
+
+        main_filtered:
+            type: rotating_file
+            path: '%kernel.logs_dir%/%kernel.environment%/main.log'
+            level: warning
+            channels: [ '!cache', '!deprecation', '!doctrine', '!security' ]
+            max_files: 7
+
+        cache:
+            type: rotating_file
+            path: '%kernel.logs_dir%/%kernel.environment%/cache.log'
+            level: warning
+            channels: [ 'cache' ]
+            max_files: 7
+
+        doctrine:
+            type: rotating_file
+            path: '%kernel.logs_dir%/%kernel.environment%/doctrine.log'
+            level: warning
+            channels: [ 'doctrine' ]
+            max_files: 7
+
+        deprecation:
+            type: rotating_file
+            path: '%kernel.logs_dir%/%kernel.environment%/deprecation.log'
+            channels: [ 'deprecation' ]
+            max_files: 7
+
+        security:
+            type: rotating_file
+            path: '%kernel.logs_dir%/%kernel.environment%/security.log'
+            level: warning
+            channels: [ 'security' ]
+            max_files: 15

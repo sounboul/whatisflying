@@ -1,0 +1,112 @@
+.multiselect-clear {
+  background: transparent;
+  height: 30.5px;
+  transition: $transition-base;
+
+  &::after,
+  &::before {
+    background-color: $gray-700;
+    top: 9.25px;
+  }
+
+  &:hover::after,
+  &:hover::before {
+    background-color: $gray-900;
+  }
+}
+
+.multiselect-input {
+  border: $border-width solid $border-color;
+  border-radius: $border-radius;
+  min-height: 33.5px;
+}
+
+.is-open .multiselect-input {
+  border-radius: $border-radius $border-radius 0 0;
+}
+
+.multiselect-options {
+  background: $white;
+  border: $border-width solid $border-color;
+  border-radius: 0 0 $border-radius $border-radius;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.multiselect-option,
+.is-multiple .multiselect-option {
+  color: $form-select-color;
+  font-size: $form-select-font-size;
+  min-height: 33.5px;
+  padding: $form-select-padding-y $form-select-padding-x;
+  white-space: nowrap;
+
+  &.is-pointed {
+    background-color: $primary;
+    color: $white;
+    cursor: pointer;
+    transition: $transition-base;
+  }
+
+  &.is-selected {
+    background-color: $primary;
+    color: $white;
+
+    &.is-pointed {
+      background-color: shift-color($primary, $link-shade-percentage);
+      color: $white;
+    }
+  }
+}
+
+.multiselect-no-options,
+.multiselect-no-results,
+.multiselect-placeholder {
+  color: $input-placeholder-color;
+  font-size: $form-select-font-size;
+  overflow: hidden;
+  white-space: nowrap;
+  width: calc(100% - 33.5px);
+}
+
+.multiselect-multiple-label,
+.multiselect-single-label {
+  font-size: $form-select-font-size;
+}
+
+.multiselect-spinner::before,
+.multiselect-spinner::after {
+  border-color: $primary transparent transparent;
+}
+
+.is-multiple .multiselect-search input,
+.is-single .multiselect-search input {
+  background: $form-select-bg;
+  color: $form-select-color;
+  font-size: $form-select-font-size;
+  line-height: $form-select-line-height;
+  padding: $form-select-padding-y 35px $form-select-padding-y $form-select-padding-x;
+}
+
+[data-theme='dark'] {
+  .multiselect-option:not(.is-selected):not(.is-pointed),
+  .is-multiple .multiselect-option:not(.is-selected):not(.is-pointed) {
+    color: $light;
+  }
+
+  .multiselect-clear {
+    &::after,
+    &::before {
+      background-color: $light;
+    }
+
+    &:hover::after,
+    &:hover::before {
+      background-color: $gray-100;
+    }
+  }
+
+  .multiselect-options {
+    background: $dark;
+  }
+}

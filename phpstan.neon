@@ -1,0 +1,10 @@
+parameters:
+    level: 6
+    paths:
+        - src
+        - tests
+
+    ignoreErrors:
+        - '#Call to an undefined method Faker\\Generator::[a-zA-Z0-9]+\(\)#'
+
+    reportUnmatchedIgnoredErrors: true

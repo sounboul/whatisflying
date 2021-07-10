@@ -1,0 +1,4 @@
+framework:
+    router:
+        default_uri: https://dev.whatisflying.com
+        utf8: true

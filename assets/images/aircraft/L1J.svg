@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2" viewBox="-3.2 -3.2 70.4 70.4" width="100" height="100">
+  <defs>
+    <filter id="a" color-interpolation-filters="sRGB">
+      <feFlood flood-color="rgb(127,127,127)" result="flood"/>
+      <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1"/>
+      <feGaussianBlur in="composite1" result="blur" stdDeviation="3.2"/>
+      <feOffset dx="3.2" dy="3.2" result="offset"/>
+      <feComposite in="SourceGraphic" in2="offset" result="composite2"/>
+    </filter>
+  </defs>
+  <path d="M32.197 52.646v-1.945c.08-.025.216-.107.216-.144v-.808h1.981l.216-1.384h.587l.113-2.186 9.34-1.012v.538c0 .104.328.342.423.342h.08c.031 0 .083-.075.083-.094v-7.884a.403.403 0 0 0-.127.047c-.25.15-.459.451-.458.575v1.695h.138v.568l-8.586-10.245c-.115-.132-.206-.75-.204-1.106l1.95.436v-1.484l-2.765-3.245v-.306l-.495-.495s-.57-1.882-.844-3.172c-.274-1.29-.595-3.945-.873-5.443-.278-1.497-.96-4.54-.972-4.54-.012 0-.694 3.043-.972 4.54-.278 1.498-.599 4.153-.873 5.443-.275 1.29-.844 3.172-.844 3.172l-.495.495v.306l-2.765 3.245v1.484l1.95-.436c.002.357-.089.974-.204 1.106l-8.586 10.245v-.568h.138v-1.695c0-.124-.208-.425-.458-.575a.404.404 0 0 0-.127-.047v7.884c0 .019.052.094.083.094h.08c.095 0 .422-.238.422-.342v-.538l9.34 1.012.114 2.186h.587l.216 1.384h1.98v.808c0 .037.137.12.217.144v1.945z" fill="#ffffff" filter="url(#a)"/>
+</svg>

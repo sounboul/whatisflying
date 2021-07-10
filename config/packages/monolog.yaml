@@ -1,0 +1,17 @@
+monolog:
+    handlers:
+        console:
+            type: console
+            process_psr_3_messages: false
+            channels: [ '!event', '!doctrine', '!console' ]
+
+        sentry:
+            type: fingers_crossed
+            handler: sentry_filtered
+            action_level: error
+            excluded_http_codes: [ 403, 404, 405 ]
+            buffer_size: 50
+
+        sentry_filtered:
+            type: service
+            id: Sentry\Monolog\Handler

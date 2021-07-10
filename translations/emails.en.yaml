@@ -1,0 +1,31 @@
+user:
+    account_activation:
+        subject: Account activation
+        content:
+            0: Hello %username%,
+            1: Thank you for creating an account on What is flying?
+            2: Please click on the button below to activate your account.
+            3: Activate my account
+            4: If the button is not visible or clickable, you can also copy and paste the link below into your browser.
+
+    account_deleted:
+        subject: Account deleted
+        content:
+            0: Hello %username%,
+            1: Following your request, your account and all associated personal data have been deleted.
+
+    password_changed:
+        subject: Password changed
+        content:
+            0: Hello %username%,
+            1: The password of your account has been changed.
+            2: If you are not the originator of this modification, the security of your account may have been compromised and we advise you to contact us without delay.
+
+    password_reset:
+        subject: Password reset
+        content:
+            0: Hello %username%,
+            1: You have requested to reset your password.
+            2: Please click on the button below to reset your password.
+            3: Reset my password
+            4: If the button is not visible or clickable, you can also copy and paste the link below into your browser.

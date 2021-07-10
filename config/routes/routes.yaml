@@ -1,0 +1,101 @@
+live_tracker:
+    path: /
+    options:
+        sitemap:
+            priority: 1.0
+
+activate_account:
+    path: /activate-account/{id}/{token}
+
+contact:
+    path: /contact
+    options:
+        sitemap:
+            priority: 0.3
+
+cookie_policy:
+    path: /cookie-policy
+    options:
+        sitemap:
+            priority: 0.3
+
+database_aircraft:
+    path: /database/aircraft/{icao24bitAddress}
+
+database_aircrafts:
+    path: /database/aircraft
+    options:
+        sitemap:
+            priority: 0.9
+
+database_aircraft_type:
+    path: /database/aircraft-type/{icaoCode}
+
+database_aircraft_types:
+    path: /database/aircraft-types
+    options:
+        sitemap:
+            priority: 0.9
+
+database_airline:
+    path: /database/airline/{icaoCode}
+
+database_airlines:
+    path: /database/airlines
+    options:
+        sitemap:
+            priority: 0.9
+
+database_airport:
+    path: /database/airport/{icaoCode}
+
+database_airports:
+    path: /database/airports
+    options:
+        sitemap:
+            priority: 0.9
+
+database_flight:
+    path: /database/flight/{flightNumber}
+
+database_flights:
+    path: /database/flights
+    options:
+        sitemap:
+            priority: 0.9
+
+database_navaid:
+    path: /database/navaid/{slug}
+
+database_navaids:
+    path: /database/navaids
+    options:
+        sitemap:
+            priority: 0.9
+
+legal_notice:
+    path: /legal-notice
+    options:
+        sitemap:
+            priority: 0.3
+
+privacy_policy:
+    path: /privacy-policy
+    options:
+        sitemap:
+            priority: 0.3
+
+reset_password:
+    path: /reset-password/{id}/{token}
+
+sign_in:
+    path: /sign-in
+    options:
+        sitemap:
+            priority: 0.8
+
+sign_up:
+    path: /sign-up
+    options:
+        sitemap:
+            priority: 0.8

@@ -1,0 +1,17 @@
+[data-theme='dark'] {
+  .page-item .page-link {
+    background: $dark;
+    color: $light;
+  }
+
+  .page-item:hover .page-link,
+  .page-item.active .page-link {
+    background: $primary;
+    color: $gray-100;
+  }
+
+  .page-item.disabled .page-link {
+    background: $dark;
+    color: $gray-700;
+  }
+}

@@ -1,0 +1,12 @@
+{% extends 'email/base.mjml.twig' %}
+
+{% block content %}
+    <!--suppress InvalidUrlAttribute -->
+    <mj-text color="#606468" font-family="Fira Sans" font-size="15px" line-height="20px">
+        {{ 'user.account_deleted.content.0'|trans({ '%username%': user.username }, 'emails') }}
+    </mj-text>
+    <mj-text color="#606468" font-family="Fira Sans" font-size="15px" line-height="20px">
+        {{ 'user.account_deleted.content.1'|trans({}, 'emails') }}
+    </mj-text>
+{% endblock %}
+

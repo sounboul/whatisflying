@@ -1,0 +1,33 @@
+.map-zoom {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  left: 16px;
+  position: absolute;
+  top: 10px;
+
+  & :not(:first-child) {
+    margin-top: 5px;
+  }
+}
+
+.map-zoom-in,
+.map-zoom-out {
+  background: $white;
+  border: none;
+  border-radius: 100%;
+  box-shadow: $box-shadow;
+  color: $body-color;
+  cursor: pointer;
+  font-size: 1.25rem;
+  height: 36px;
+  width: 36px;
+}
+
+[data-theme='dark'] {
+  .map-zoom-in,
+  .map-zoom-out {
+    background: $dark;
+    color: $light;
+  }
+}

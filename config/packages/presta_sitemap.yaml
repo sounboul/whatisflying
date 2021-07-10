@@ -1,0 +1,9 @@
+presta_sitemap:
+    default_section: default
+    dump_directory: '%kernel.project_dir%/public/sitemap'
+    items_by_set: 10000
+
+    defaults:
+        priority: 0.5
+        changefreq: weekly
+        lastmod: now

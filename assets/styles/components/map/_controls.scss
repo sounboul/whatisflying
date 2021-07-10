@@ -1,0 +1,61 @@
+@import 'controls/attribution';
+@import 'controls/scale';
+@import 'controls/zoom';
+
+.map-control {
+  background: $white;
+  border: none;
+  border-radius: 100%;
+  box-shadow: $box-shadow;
+  color: $body-color;
+  font-size: 1.25rem;
+  height: 48px;
+  width: 48px;
+
+  &.map-control-small {
+    height: 36px;
+    width: 36px;
+  }
+}
+
+.map-control-badge {
+  background: $primary;
+  border-radius: 100%;
+  bottom: 0;
+  color: $light;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  height: 16px;
+  line-height: 1.45;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  width: 16px;
+}
+
+.map-control-menu {
+  padding: 1rem;
+  width: 250px;
+}
+
+.map-controls {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  left: 10px;
+  position: absolute;
+  top: 110px;
+  z-index: 200;
+
+  & > :not(:first-child) {
+    margin-top: 10px;
+  }
+}
+
+[data-theme='dark'] {
+  .map-control,
+  .map-control-menu {
+    background: $dark;
+    color: $light;
+  }
+}

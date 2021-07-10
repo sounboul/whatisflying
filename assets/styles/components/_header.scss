@@ -1,0 +1,26 @@
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 250px;
+  padding: 1.25rem;
+  position: relative;
+
+  @include media-breakpoint-up(lg) {
+    height: 450px;
+  }
+}
+
+.header-background {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: '';
+  filter: brightness(0.55);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}

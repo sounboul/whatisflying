@@ -1,0 +1,7 @@
+{% extends 'email/base.mjml.twig' %}
+
+{% block content %}
+    <mj-text align="justify" color="#606468" font-family="Fira Sans" font-size="15px" line-height="20px">
+        {{ message|nl2br }}
+    </mj-text>
+{% endblock %}

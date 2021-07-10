@@ -1,0 +1,26 @@
+monolog:
+    handlers:
+        main:
+            type: stream
+            path: '%kernel.logs_dir%/%kernel.environment%/main.log'
+            channels: [ '!cache', '!deprecation', '!doctrine', '!event', '!security' ]
+
+        cache:
+            type: stream
+            path: '%kernel.logs_dir%/%kernel.environment%/cache.log'
+            channels: [ 'cache' ]
+
+        doctrine:
+            type: stream
+            path: '%kernel.logs_dir%/%kernel.environment%/doctrine.log'
+            channels: [ 'doctrine' ]
+
+        event:
+            type: stream
+            path: '%kernel.logs_dir%/%kernel.environment%/event.log'
+            channels: [ 'event' ]
+
+        security:
+            type: stream
+            path: '%kernel.logs_dir%/%kernel.environment%/security.log'
+            channels: [ 'security' ]

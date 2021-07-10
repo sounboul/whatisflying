@@ -1,0 +1,50 @@
+@import 'legend/atmospheric-pressure';
+@import 'legend/cloud-coverage';
+@import 'legend/precipitations';
+@import 'legend/temperature';
+@import 'legend/wind-speed';
+
+.map-legend {
+  bottom: 40px;
+  position: absolute;
+  right: 10px;
+  width: calc(100% - 20px);
+
+  @include media-breakpoint-up(md) {
+    width: 350px;
+  }
+
+  & > :not(:first-child) {
+    margin-top: 10px;
+  }
+}
+
+.legend {
+  background: $white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  font-size: 0.8125rem;
+  padding: 0.625rem;
+}
+
+.legend-bar {
+  border: 1px solid $body-color;
+  height: 10px;
+}
+
+.legend-end {
+  border-right: 1px solid $body-color;
+  padding-right: 0.3125rem;
+}
+
+.legend-start {
+  border-left: 1px solid $body-color;
+  padding-left: 0.3125rem;
+}
+
+[data-theme='dark'] {
+  .legend {
+    background: $dark;
+    color: $light;
+  }
+}

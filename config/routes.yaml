@@ -1,0 +1,7 @@
+api_login:
+    path: /api/login
+    methods: [ 'POST' ]
+
+api_refresh:
+    path: /api/refresh
+    controller: gesdinet.jwtrefreshtoken::refresh

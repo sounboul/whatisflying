@@ -1,0 +1,24 @@
+.carousel-caption {
+  background: rgba(46, 50, 55, 0.75);
+  bottom: 0;
+  font-size: 0.75rem;
+  padding: 0.125rem 0.3125rem;
+  position: absolute;
+  text-align: left;
+}
+
+.carousel-container {
+  background: $dark;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+
+  @include media-breakpoint-up(lg) {
+    min-height: 800px;
+  }
+}
+
+.carousel-indicators {
+  margin-bottom: 1.5rem;
+}

@@ -1,0 +1,30 @@
+doctrine:
+    orm:
+        auto_generate_proxy_classes: false
+        metadata_cache_driver:
+            type: pool
+            pool: doctrine.metadata_cache_pool
+        query_cache_driver:
+            type: pool
+            pool: doctrine.query_cache_pool
+        result_cache_driver:
+            type: pool
+            pool: doctrine.result_cache_pool
+        second_level_cache:
+            enabled: true
+            region_lifetime: 86400
+            region_cache_driver:
+                type: pool
+                pool: doctrine.second_level_cache_pool
+
+framework:
+    cache:
+        pools:
+            doctrine.metadata_cache_pool:
+                adapter: cache.adapter.redis
+            doctrine.query_cache_pool:
+                adapter: cache.adapter.redis
+            doctrine.result_cache_pool:
+                adapter: cache.adapter.redis
+            doctrine.second_level_cache_pool:
+                adapter: cache.adapter.redis

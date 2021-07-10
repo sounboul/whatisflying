@@ -1,0 +1,76 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    App\:
+        resource: '%kernel.project_dir%/src/'
+        exclude:
+            - '%kernel.project_dir%/src/Entity/'
+            - '%kernel.project_dir%/src/Migrations/'
+            - '%kernel.project_dir%/src/Kernel.php'
+
+    App\Controller\:
+        resource: '%kernel.project_dir%/src/Controller/'
+        tags:
+            - { name: controller.service_arguments }
+
+    App\DataPersister\MessageDataPersister:
+        class: App\DataPersister\MessageDataPersister
+        decorates: api_platform.doctrine.orm.data_persister
+        tags:
+            - { name: api_platform.data_persister }
+
+    App\DataPersister\UserDataPersister:
+        class: App\DataPersister\UserDataPersister
+        decorates: api_platform.doctrine.orm.data_persister
+        tags:
+            - { name: api_platform.data_persister }
+
+    App\Doctrine\ORM\EventSubscriber\:
+        resource: '%kernel.project_dir%/src/Doctrine/ORM/EventSubscriber'
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
+
+    App\Doctrine\ORM\EventSubscriber\FileEventSubscriber:
+        class: App\Doctrine\ORM\EventSubscriber\FileEventSubscriber
+        tags:
+            - { name: doctrine.event_subscriber, connection: default, event: prePersist, priority: 100 }
+            - { name: doctrine.event_subscriber, connection: default, event: preUpdate, priority: 100 }
+
+    App\Doctrine\ORM\EventSubscriber\PictureEventSubscriber:
+        class: App\Doctrine\ORM\EventSubscriber\PictureEventSubscriber
+        tags:
+            - { name: doctrine.event_subscriber, connection: default, event: prePersist, priority: 200 }
+            - { name: doctrine.event_subscriber, connection: default, event: preUpdate, priority: 200 }
+
+    App\Serializer\ApiNormalizer:
+        class: App\Serializer\ApiNormalizer
+        decorates: api_platform.jsonld.normalizer.item
+        arguments:
+            $baseUrl: '%env(BASE_URL)%/upload'
+
+    App\Service\CacheGenerator\CacheGenerator:
+        class: App\Service\CacheGenerator\CacheGenerator
+        arguments:
+            $cacheDirectory: '%kernel.project_dir%/public/cache'
+
+    App\Service\FileUploader\FileUploader:
+        class: App\Service\FileUploader\FileUploader
+        arguments:
+            $uploadDirectory: '%kernel.project_dir%/public/upload'
+
+    App\Service\Mailer\ContactMailer:
+        class: App\Service\Mailer\ContactMailer
+        arguments:
+            $recipientAddress: '%env(MAILER_RECIPIENT_ADDRESS)%'
+            $recipientName: '%env(MAILER_RECIPIENT_NAME)%'
+
+    App\Service\Mailer\UserMailer:
+        class: App\Service\Mailer\UserMailer
+        arguments:
+            $senderAddress: '%env(MAILER_SENDER_ADDRESS)%'
+            $senderName: '%env(MAILER_SENDER_NAME)%'
+
+    Ramsey\Uuid\UuidFactoryInterface:
+        class: Ramsey\Uuid\UuidFactory

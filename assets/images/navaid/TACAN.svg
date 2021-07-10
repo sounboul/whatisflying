@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2" viewBox="-100 -100 2200 2200" width="100" height="100">
+  <circle fill="#5990b0" cx="1000" cy="1000" r="1000"/>
+  <g transform="translate(230,-230)">
+    <g transform="translate(-8 -1322.1)">
+      <path fill="none" stroke="#f6f8fa" stroke-width="100" d="m544.47 2150.5h467.07l290.98-168 250 433.01-287.09 165.75-237.43 411.24v331.5h-500v-335.66l-233.83-405-290.69-167.83 250-433.01z"/>
+      <path fill="#f6f8fa" d="m777.5 2704c65.998 0 119.5-53.726 119.5-120s-53.502-120-119.5-120-119.5 53.726-119.5 120 53.502 120 119.5 120z"/>
+    </g>
+  </g>
+</svg>

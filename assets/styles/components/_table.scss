@@ -1,0 +1,7 @@
+.table {
+  white-space: nowrap;
+
+  & > :not(caption) > *:last-child > * {
+    border-bottom-width: 0;
+  }
+}

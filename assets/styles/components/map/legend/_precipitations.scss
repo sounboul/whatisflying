@@ -1,0 +1,14 @@
+.legend-bar-precipitations {
+  // stylelint-disable-next-line plugin/no-unsupported-browser-features
+  background:
+    linear-gradient(
+      to right,
+      rgba(172, 170, 247, 0) 0%,
+      rgba(172, 170, 247, 0.4) 0.5%,
+      rgba(141, 138, 243, 0.9) 5%,
+      rgb(112, 110, 194) 10%,
+      rgb(86, 88, 255) 20%,
+      rgb(91, 93, 177) 50%,
+      rgb(62, 63, 133) 100%
+    );
+}

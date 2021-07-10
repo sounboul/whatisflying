@@ -1,0 +1,31 @@
+user:
+    account_activation:
+        subject: Activation du compte
+        content:
+            0: Bonjour %username%,
+            1: Merci d'avoir créé un compte sur What is flying?
+            2: Veuillez cliquer sur le bouton ci-dessous pour activer votre compte.
+            3: Activer mon compte
+            4: Si le bouton n'est pas visible ou cliquable, vous pouvez également copier le lien ci-dessous dans votre navigateur.
+
+    account_deleted:
+        subject: Compte supprimé
+        content:
+            0: Bonjour %username%,
+            1: Suite à votre demande, votre compte et l'ensemble des données personnelles associées ont été supprimés.
+
+    password_changed:
+        subject: Mot de passe modifié
+        content:
+            0: Bonjour %username%,
+            1: Le mot de passe de votre compte a été modifié.
+            2: Si vous n'êtes pas à l'origine de cette modification, la sécurite de votre compte pourrait avoir été compromise et nous vous conseillons de nous contacter sans tarder.
+
+    password_reset:
+        subject: Réinitialisation du mot de passe
+        content:
+            0: Bonjour %username%,
+            1: Vous avez demandé la réinitialisation de votre mot de passe.
+            2: Veuillez cliquer sur le bouton ci-dessous pour réinitialiser votre mot de passe.
+            3: Réinitialiser mon mot de passe
+            4: Si le bouton n'est pas visible ou cliquable, vous pouvez également copier le lien ci-dessous dans votre navigateur.

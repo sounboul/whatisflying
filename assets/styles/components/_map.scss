@@ -1,0 +1,28 @@
+@import 'map/controls';
+@import 'map/layout';
+@import 'map/legend';
+@import 'map/overlay';
+
+.map {
+  background: $white;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 500px;
+  width: 100%;
+
+  @include media-breakpoint-up(lg) {
+    height: 100%;
+    min-height: 800px;
+  }
+
+  .ol-viewport {
+    flex-grow: 1;
+  }
+}
+
+[data-theme='dark'] {
+  .map {
+    background: $dark;
+  }
+}

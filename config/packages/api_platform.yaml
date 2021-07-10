@@ -1,0 +1,23 @@
+api_platform:
+    enable_re_doc: false
+    enable_swagger_ui: false
+
+    collection:
+        pagination:
+            items_per_page_parameter_name: itemsPerPage
+
+    defaults:
+        pagination_client_enabled: true
+        pagination_client_items_per_page: true
+        pagination_items_per_page: 24
+        pagination_maximum_items_per_page: 100
+
+    eager_loading:
+        enabled: false
+
+    formats:
+        jsonld: [ 'application/ld+json' ]
+        json: [ 'application/json' ]
+
+    mapping:
+        paths: [ '%kernel.project_dir%/src/Entity' ]

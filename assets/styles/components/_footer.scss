@@ -1,0 +1,22 @@
+.footer {
+  background: #1a252f;
+  box-shadow: 0 -3px 5px rgba($dark, 0.125);
+  color: $light;
+  font-size: 0.9375rem;
+  min-height: 250px;
+  padding: 1.875rem 0;
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.5);
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.footer-nav {
+  @include list-unstyled;
+
+  line-height: 1.5;
+}

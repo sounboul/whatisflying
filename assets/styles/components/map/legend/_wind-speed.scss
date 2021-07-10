@@ -1,0 +1,16 @@
+.legend-bar-wind-speed {
+  // stylelint-disable-next-line plugin/no-unsupported-browser-features
+  background:
+    linear-gradient(
+      to right,
+      rgba(255, 255, 0, 0) 0%,
+      rgba(170, 128, 177, 0.44) 1%,
+      rgba(170, 128, 177, 0.54) 1.5%,
+      rgba(176, 128, 177, 0.71) 3%,
+      rgba(170, 128, 177, 0.84) 6%,
+      rgb(164, 123, 170) 12.5%,
+      rgba(116, 76, 172, 0.9) 25%,
+      rgb(158, 128, 177) 50%,
+      rgba(48, 6, 53, 0.82) 100%
+    );
+}
