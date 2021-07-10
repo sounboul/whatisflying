@@ -47,6 +47,7 @@
         "symfony/http-client": "^5.3.3",
         "symfony/intl": "^5.3.0",
         "symfony/mailer": "^5.3.3",
+        "symfony/maker-bundle": "^1.33.0",
         "symfony/messenger": "^5.3.3",
         "symfony/monolog-bundle": "^3.7.0",
         "symfony/rate-limiter": "^5.3.0",
@@ -73,7 +74,6 @@
         "phpstan/phpstan-symfony": "^0.12.38",
         "phpunit/phpunit": "^9.5.6",
         "symfony/browser-kit": "^5.3.0",
-        "symfony/maker-bundle": "^1.33.0",
         "symfony/phpunit-bridge": "^5.3.3"
     },
     "autoload": {
