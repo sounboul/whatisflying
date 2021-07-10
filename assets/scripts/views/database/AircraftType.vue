@@ -259,7 +259,7 @@
                       </tr>
                     </template>
 
-                    <template v-if="aircraftType.aircraftFamily?.match(/^[GH]$/)">
+                    <template v-if="aircraftType.aircraftFamily?.match(/^[GHT]$/)">
                       <tr>
                         <th scope="row" class="col-6">{{ $t('main_rotor_diameter') }}</th>
                         <td class="col-6">
