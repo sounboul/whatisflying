@@ -25,15 +25,22 @@ final class FileUploader implements FileUploaderInterface
     public function upload(string $filepath): File
     {
         $file = new File($filepath);
-        $uploadedFile = $file->move(
+
+        $uploadedFilePath = sprintf(
+            '%s/%s.%s',
             $this->uploadDirectory,
-            $this->uuidFactory->uuid4()->toString() . '.' . $file->guessExtension() ?? 'bin'
+            $this->uuidFactory->uuid4()->toString(),
+            $file->guessExtension() ?? 'bin'
         );
 
-        if (is_string($fileRealPath = $uploadedFile->getRealPath())) {
-            $filesystem = new Filesystem();
-            $filesystem->chown($fileRealPath, 'www-data');
-            $filesystem->chmod($fileRealPath, 0644);
+        $filesystem = new Filesystem();
+        $filesystem->copy($filepath, $uploadedFilePath);
+
+        $uploadedFile = new File($uploadedFilePath);
+
+        if (is_string($uploadedFileRealPath = $uploadedFile->getRealPath())) {
+            $filesystem->chown($uploadedFileRealPath, 'www-data');
+            $filesystem->chmod($uploadedFileRealPath, 0644);
         }
 
         return $uploadedFile;
