@@ -27,6 +27,9 @@ Encore
   .enableSourceMaps()
   .enableVersioning(Encore.isProduction())
   .enableSingleRuntimeChunk()
+  .configureBabel(() => {}, {
+    includeNodeModules: ['vuex-composition-helpers']
+  })
   .configureDefinePlugin(options => {
     options.__VUE_OPTIONS_API__ = true
     options.__VUE_PROD_DEVTOOLS__ = false
@@ -36,7 +39,7 @@ Encore
 
     const envFiles = ['.env', '.env.local']
     envFiles.forEach(envFile => {
-      const envFilePath = path.resolve(__dirname, envFile);
+      const envFilePath = path.resolve(__dirname, envFile)
       if (fs.existsSync(envFilePath)) {
         const envVars = dotenv.config({ path: envFilePath }).parsed
         Object.keys(envVars).forEach(envVar => {
