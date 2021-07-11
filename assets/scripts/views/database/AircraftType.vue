@@ -176,7 +176,7 @@
                     <th scope="row" class="col-6">
                       {{ $t('length') }}
 
-                      <template v-if="aircraftType.aircraftFamily?.match(/^[GH]$/)">
+                      <template v-if="aircraftTypeLoaded && aircraftType.aircraftFamily?.match(/^[GH]$/)">
                         <span class="d-inline-flex ms-1 small" data-bs-toggle="tooltip"
                               :title="$t('rotors_excluded')">
                           <FontAwesomeIcon :icon="['far', 'circle-question']" aria-hidden="true"/>
