@@ -33,7 +33,7 @@
   <abbr v-else-if="navaidType === 'TACAN'" data-bs-toggle="tooltip"
         :title="$t('tactical_air_navigation_system')">TACAN</abbr>
   <abbr v-else-if="navaidType === 'VOR'" data-bs-toggle="tooltip"
-        :title="t('vhf_omnidirectional_range')">VOR</abbr>
+        :title="$t('vhf_omnidirectional_range')">VOR</abbr>
   <abbr v-else-if="navaidType === 'VOR-DME'" data-bs-toggle="tooltip"
         :title="$t('vhf_omnidirectional_range_distance_measuring_equipment')">VOR-DME</abbr>
   <abbr v-else-if="navaidType === 'VORTAC'" data-bs-toggle="tooltip"
