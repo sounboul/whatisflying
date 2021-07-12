@@ -52,7 +52,7 @@ Real time aircraft tracker & aeronautical database, build with Vue.js 3, PHP 8, 
 
 We target browsers that supports the following features:
 
-- [ECMAScript 2015 (ES6)](https://www.caniuse.com/es6).
+- [ECMAScript 2015 (ES6)](https://www.caniuse.com/es6)
 - [Pointer events](https://www.caniuse.com/pointer)
 - [TLS 1.3](https://www.caniuse.com/tls1-3)
 
@@ -71,6 +71,10 @@ It means the following browsers are currently supported:
 | ![](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/70.0.0/safari/safari_32x32.png) | Safari              | 14+                |
 | ![](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/70.0.0/archive/safari-ios_1-6/safari-ios_1-6_32x32.png) | Safari for iOS      | 12.2+              |
 | ![](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/70.0.0/samsung-internet/samsung-internet_32x32.png) | Samsung Internet    | 10.1+              |
+
+Please also note that on browsers that do not natively support
+[Intl.RelativeTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat)
+, the relative dates will automatically fall back to English regardless of the app locale.
 
 ## Thanks
 
