@@ -27,7 +27,7 @@ Encore
   .enableSourceMaps()
   .enableVersioning(Encore.isProduction())
   .enableSingleRuntimeChunk()
-  .configureBabel(() => {}, {
+  .configureBabel(null, {
     includeNodeModules: ['vuex-composition-helpers']
   })
   .configureDefinePlugin(options => {
