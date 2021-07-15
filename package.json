@@ -42,7 +42,7 @@
         "papaparse": "^5.3.1",
         "preferred-locale": "^1.0.10",
         "qs": "^6.10.1",
-        "simplebar": "^5.3.4",
+        "simplebar": "^5.3.5",
         "spdx-license-list": "^6.4.0",
         "uuid": "^8.3.2",
         "vue": "^3.1.4",
