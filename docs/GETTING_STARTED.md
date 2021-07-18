@@ -117,7 +117,7 @@ npm install
 Build the assets:
 
 ```bash
-npm run build:prod
+npm run build:dev
 ```
 
 ### Production
