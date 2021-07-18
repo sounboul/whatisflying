@@ -61,6 +61,7 @@ Encore
     outputPath: Encore.isProduction() ? 'favicons.[contenthash:8]/' : 'favicons/',
     prefix: Encore.isProduction() ? 'favicons.[contenthash:8]/' : 'favicons/',
     favicons: {
+      appName: 'What is flying?',
       icons: {
         android: {
           background: '#ffffff',
