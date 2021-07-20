@@ -1,9 +1,21 @@
 # Changelog
 
+## Version 3.0.0-rc.1
+
+- fix: Missing unit (3a0106e).
+- fix: Trying to access property of an undefined variable (0e470ce).
+- fix: Unexpected token error (eab1620).
+- fix: Original files are deleted during import (518d9f9).
+- fix: Call to undefined method (95175d3).
+- fix: Unused callback warning (18f1622).
+- fix: Missing OG prefix (2d64569).
+- fix: Wrong application name in webmanifest (8d8085f).
+- fix: Filters count badge color (3a0187d).
+
 ## Version 3.0.0-beta.2
 
-- fix: Don't show "rotors excluded" tooltip on length property for tiltrotors.
-- fix: Show main rotor diameter & area for tiltrotors.
+- fix: Don't show "rotors excluded" tooltip on length property for tiltrotors (4ff4810).
+- fix: Show main rotor diameter & area for tiltrotors (abea2af).
 
 ## Version 3.0.0-beta.1
 
