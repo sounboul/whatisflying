@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 3.0.0-rc.2
+
+- fix: Broken template (922fe85).
+- fix: Wrong creation date is displayed (ae72e142).
+
 ## Version 3.0.0-rc.1
 
 - fix: Missing unit (3a0106e).
