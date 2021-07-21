@@ -9,28 +9,28 @@
 
       <template v-if="user">
         <div class="form-check">
-          <label class="form-check-input" for="inputCloudCoverageLayer">{{ $t('cloud_coverage') }}</label>
-          <input class="from-check-label" id="inputCloudCoverageLayer" type="checkbox"
+          <label class="form-check-label" for="inputCloudCoverageLayer">{{ $t('cloud_coverage') }}</label>
+          <input class="form-check-input" id="inputCloudCoverageLayer" type="checkbox"
                  :checked="showCloudCoverage" @change="setShowCloudCoverage($event.target.checked)">
         </div>
         <div class="form-check">
-          <label class="form-check-input" for="inputPrecipitationsLayer">{{ $t('precipitations') }}</label>
-          <input class="from-check-label" id="inputPrecipitationsLayer" type="checkbox"
+          <label class="form-check-label" for="inputPrecipitationsLayer">{{ $t('precipitations') }}</label>
+          <input class="form-check-input" id="inputPrecipitationsLayer" type="checkbox"
                  :checked="showPrecipitations" @change="setShowPrecipitations($event.target.checked)">
         </div>
         <div class="form-check">
-          <label class="form-check-input" for="inputAtmosphericPressureLayer">{{ $t('atmospheric_pressure') }}</label>
-          <input class="from-check-label" id="inputAtmosphericPressureLayer" type="checkbox"
+          <label class="form-check-label" for="inputAtmosphericPressureLayer">{{ $t('atmospheric_pressure') }}</label>
+          <input class="form-check-input" id="inputAtmosphericPressureLayer" type="checkbox"
                  :checked="showAtmosphericPressure" @change="setShowAtmosphericPressure($event.target.checked)">
         </div>
         <div class="form-check">
-          <label class="form-check-input" for="inputTemperatureLayer">{{ $t('temperature') }}</label>
-          <input class="from-check-label" id="inputTemperatureLayer" type="checkbox"
+          <label class="form-check-label" for="inputTemperatureLayer">{{ $t('temperature') }}</label>
+          <input class="form-check-input" id="inputTemperatureLayer" type="checkbox"
                  :checked="showTemperature" @change="setShowTemperature($event.target.checked)">
         </div>
         <div class="form-check">
-          <label class="form-check-input" for="inputWindSpeedLayer">{{ $t('wind_speed') }}</label>
-          <input class="from-check-label" id="inputWindSpeedLayer" type="checkbox"
+          <label class="form-check-label" for="inputWindSpeedLayer">{{ $t('wind_speed') }}</label>
+          <input class="form-check-input" id="inputWindSpeedLayer" type="checkbox"
                  :checked="showWindSpeed" @change="setShowWindSpeed($event.target.checked)">
         </div>
       </template>
