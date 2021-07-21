@@ -4,31 +4,28 @@
     <template #title>{{ $t('activate_account') }}</template>
 
     <template #content>
-      <div class="card card-body">
 
-        <div v-if="error" class="alert alert-danger mb-3">
-          <div class="d-flex align-items-center">
-            <FontAwesomeIcon class="me-3" :icon="['far', 'circle-exclamation']" size="3x" aria-hidden="true"/>
-            {{ error }}
-          </div>
+      <div v-if="error" class="alert alert-danger mb-3">
+        <div class="d-flex align-items-center">
+          <FontAwesomeIcon class="me-3" :icon="['far', 'circle-exclamation']" size="3x" aria-hidden="true"/>
+          {{ error }}
         </div>
-
-        <template v-if="success">
-          <div class="alert alert-success mb-3">
-            <div class="d-flex align-items-center">
-              <FontAwesomeIcon class="me-3" :icon="['far', 'circle-check']" size="3x" aria-hidden="true"/>
-              {{ $t('your_account_has_been_activated') }}
-            </div>
-          </div>
-        </template>
-
       </div>
+
+      <div v-else-if="success" class="alert alert-success mb-3">
+        <div class="d-flex align-items-center">
+          <FontAwesomeIcon class="me-3" :icon="['far', 'circle-check']" size="3x" aria-hidden="true"/>
+          {{ $t('your_account_has_been_activated') }}
+        </div>
+      </div>
+
     </template>
 
   </CenteredLayout>
 </template>
 
 <script>
+import FontAwesomeIcon from '@scripts/fontawesome'
 import CenteredLayout from '@scripts/layouts/CenteredLayout'
 import { Unauthorized, User } from '@scripts/services/api'
 import store from '@scripts/store'
@@ -37,7 +34,8 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
   name: 'ActivateAccount',
   components: {
-    CenteredLayout
+    CenteredLayout,
+    FontAwesomeIcon
   },
   props: {
     id: String,
