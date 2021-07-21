@@ -95,7 +95,7 @@
 
                   </td>
                   <td>
-                    {{ $dt.fromISO(user.created).toLocaleString($dt.DATETIME_MED) }}
+                    {{ $dt.fromISO(_user.created).toLocaleString($dt.DATETIME_MED) }}
                   </td>
                   <td>
 
