@@ -170,8 +170,8 @@
                       <template v-if="aircraftLoaded">
 
                         <template v-if="aircraft.manufactured">
-                          {{ $dt.fromISO(aircraft.manufactured).toLocaleString($dt.DATE_MED) }}
-                          ({{ $dt.fromISO(aircraft.manufactured).toRelative() }})
+                          {{ $dt.fromISO(aircraft.manufactured).setLocale($i18n.locale).toLocaleString($dt.DATE_MED) }}
+                          ({{ $dt.fromISO(aircraft.manufactured).setLocale($i18n.locale).toRelative() }})
                         </template>
                         <template v-else>
                           -
@@ -288,8 +288,8 @@
                       <template v-if="aircraftLoaded">
 
                         <template v-if="aircraft.registered">
-                          {{ $dt.fromISO(aircraft.registered).toLocaleString($dt.DATE_MED) }}
-                          ({{ $dt.fromISO(aircraft.registered).toRelative() }})
+                          {{ $dt.fromISO(aircraft.registered).setLocale($i18n.locale).toLocaleString($dt.DATE_MED) }}
+                          ({{ $dt.fromISO(aircraft.registered).setLocale($i18n.locale).toRelative() }})
                         </template>
                         <template v-else>
                           -
@@ -309,8 +309,8 @@
                       <template v-if="aircraftLoaded">
 
                         <template v-if="aircraft.registeredUntil">
-                          {{ $dt.fromISO(aircraft.registeredUntil).toLocaleString($dt.DATE_MED) }}
-                          ({{ $dt.fromISO(aircraft.registeredUntil).toRelative() }})
+                          {{ $dt.fromISO(aircraft.registeredUntil).setLocale($i18n.locale).toLocaleString($dt.DATE_MED) }}
+                          ({{ $dt.fromISO(aircraft.registeredUntil).setLocale($i18n.locale).toRelative() }})
                         </template>
                         <template v-else>
                           -

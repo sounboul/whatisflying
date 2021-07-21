@@ -95,12 +95,12 @@
 
                   </td>
                   <td>
-                    {{ $dt.fromISO(_user.created).toLocaleString($dt.DATETIME_MED) }}
+                    {{ $dt.fromISO(_user.created).setLocale($i18n.locale).toLocaleString($dt.DATETIME_MED) }}
                   </td>
                   <td>
 
                     <template v-if="_user.updated">
-                      {{ $dt.fromISO(_user.updated).toLocaleString($dt.DATETIME_MED) }}
+                      {{ $dt.fromISO(_user.updated).setLocale($i18n.locale).toLocaleString($dt.DATETIME_MED) }}
                     </template>
                     <template v-else>
                       -

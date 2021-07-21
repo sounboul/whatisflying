@@ -1,6 +1,5 @@
 import App from '@scripts/App.vue'
 import i18n from '@scripts/i18n'
-import DateTime from '@scripts/luxon'
 import Math from '@scripts/mathjs'
 import router from '@scripts/router'
 import Sentry from '@scripts/sentry'
@@ -8,6 +7,7 @@ import store from '@scripts/store'
 
 import 'bootstrap'
 import 'core-js'
+import { DateTime } from 'luxon'
 import { encode } from 'morsee'
 import { createApp } from 'vue'
 

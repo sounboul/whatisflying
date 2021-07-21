@@ -1,5 +1,5 @@
-import DateTime from '@scripts/luxon'
 import Math from '@scripts/mathjs'
+import { DateTime } from 'luxon'
 import { DEVICE_PIXEL_RATIO } from 'ol/has'
 import * as Layer from 'ol/layer'
 import * as Projection from 'ol/proj'

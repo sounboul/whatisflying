@@ -39,7 +39,7 @@
                 <td>{{ aircraftModel.engineManufacturer }}</td>
                 <td>{{ aircraftModel.engineModel.split(';').join(' / ') }}</td>
                 <td>
-                  {{ $dt.fromISO(aircraftModel.certified).toLocaleString($dt.DATE_MED) }}
+                  {{ $dt.fromISO(aircraftModel.certified).setLocale($i18n.locale).toLocaleString($dt.DATE_MED) }}
 
                   <a v-if="aircraftModel.aircraftType.typeCertificate" rel="nofollow noreferrer"
                      :href="aircraftModel.aircraftType.typeCertificate">
