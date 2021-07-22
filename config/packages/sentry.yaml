@@ -3,13 +3,3 @@ sentry:
     register_error_listener: false
     options:
         environment: '%kernel.environment%'
-
-services:
-    _defaults:
-        autowire: true
-        autoconfigure: true
-
-    Sentry\Monolog\Handler:
-        arguments:
-            $bubble: false
-            $level: !php/const Monolog\Logger::ERROR

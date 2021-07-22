@@ -13,5 +13,6 @@ monolog:
             buffer_size: 50
 
         sentry_filtered:
-            type: service
-            id: Sentry\Monolog\Handler
+            type: sentry
+            level: !php/const Monolog\Logger::ERROR
+            hub_id: Sentry\State\HubInterface
