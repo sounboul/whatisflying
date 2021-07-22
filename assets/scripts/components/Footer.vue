@@ -28,17 +28,17 @@
           <h5 class="text-reset">{{ $t('information') }}</h5>
           <ul class="footer-nav">
             <li>
-              <RouterLink class="footer-link" active-class="active" :to="{ name: 'legal_notice' }" exact>
+              <RouterLink class="footer-link" active-class="active" :to="{ name: 'legal_notice' }">
                 {{ $t('legal_notice') }}
               </RouterLink>
             </li>
             <li>
-              <RouterLink class="footer-link" active-class="active" :to="{ name: 'privacy_policy' }" exact>
+              <RouterLink class="footer-link" active-class="active" :to="{ name: 'privacy_policy' }">
                 {{ $t('privacy_policy') }}
               </RouterLink>
             </li>
             <li>
-              <RouterLink class="footer-link" active-class="active" :to="{ name: 'cookie_policy' }" exact>
+              <RouterLink class="footer-link" active-class="active" :to="{ name: 'cookie_policy' }">
                 {{ $t('cookie_policy') }}
               </RouterLink>
             </li>
@@ -48,7 +48,7 @@
           <h5 class="text-reset">{{ $t('contact_us') }}</h5>
           <ul class="footer-nav">
             <li>
-              <RouterLink class="footer-link" active-class="active" :to="{ name: 'contact' }" exact>
+              <RouterLink class="footer-link" active-class="active" :to="{ name: 'contact' }">
                 {{ $t('contact_form') }}
               </RouterLink>
             </li>

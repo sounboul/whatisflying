@@ -11,17 +11,17 @@
           <div class="card card-body">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <RouterLink class="nav-link" :to="{ name: 'user_preferences' }" active-class="active" exact>
+                <RouterLink class="nav-link" :to="{ name: 'user_preferences' }" active-class="active">
                   {{ $t('preferences') }}
                 </RouterLink>
               </li>
               <li class="nav-item">
-                <RouterLink class="nav-link" :to="{ name: 'user_security' }" active-class="active" exact>
+                <RouterLink class="nav-link" :to="{ name: 'user_security' }" active-class="active">
                   {{ $t('security') }}
                 </RouterLink>
               </li>
               <li class="nav-item">
-                <RouterLink class="nav-link" :to="{ name: 'user_privacy' }" active-class="active" exact>
+                <RouterLink class="nav-link" :to="{ name: 'user_privacy' }" active-class="active">
                   {{ $t('privacy') }}
                 </RouterLink>
               </li>

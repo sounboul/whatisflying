@@ -12,7 +12,7 @@
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <RouterLink class="nav-link" active-class="active" :to="{ name: 'live_tracker' }" exact>
+            <RouterLink class="nav-link" active-class="active" :to="{ name: 'live_tracker' }">
               {{ $t('live_tracker') }}
             </RouterLink>
           </li>
@@ -22,22 +22,22 @@
               {{ $t('database') }}
             </a>
             <div class="dropdown-menu" :class="{ 'dropdown-menu-dark': darkMode }" aria-labelledby="databaseDropdown">
-              <RouterLink class="dropdown-item" active-class="active" :to="{ name: 'database_aircrafts' }" exact>
+              <RouterLink class="dropdown-item" active-class="active" :to="{ name: 'database_aircrafts' }">
                 {{ $t('aircraft__p') }}
               </RouterLink>
-              <RouterLink class="dropdown-item" active-class="active" :to="{ name: 'database_aircraft_types' }" exact>
+              <RouterLink class="dropdown-item" active-class="active" :to="{ name: 'database_aircraft_types' }">
                 {{ $t('aircraft_types') }}
               </RouterLink>
-              <RouterLink class="dropdown-item" active-class="active" :to="{ name: 'database_airlines' }" exact>
+              <RouterLink class="dropdown-item" active-class="active" :to="{ name: 'database_airlines' }">
                 {{ $t('airlines') }}
               </RouterLink>
-              <RouterLink class="dropdown-item" active-class="active" :to="{ name: 'database_airports' }" exact>
+              <RouterLink class="dropdown-item" active-class="active" :to="{ name: 'database_airports' }">
                 {{ $t('airports') }}
               </RouterLink>
-              <RouterLink class="dropdown-item" active-class="active" :to="{ name: 'database_flights' }" exact>
+              <RouterLink class="dropdown-item" active-class="active" :to="{ name: 'database_flights' }">
                 {{ $t('flights') }}
               </RouterLink>
-              <RouterLink class="dropdown-item" active-class="active" :to="{ name: 'database_navaids' }" exact>
+              <RouterLink class="dropdown-item" active-class="active" :to="{ name: 'database_navaids' }">
                 {{ $t('navaids') }}
               </RouterLink>
             </div>
@@ -49,7 +49,7 @@
               {{ $t('admin') }}
             </a>
             <div class="dropdown-menu" :class="{ 'dropdown-menu-dark': darkMode }" aria-labelledby="adminDropdown">
-              <RouterLink class="dropdown-item" active-class="active" :to="{ name: 'admin_users' }" exact>
+              <RouterLink class="dropdown-item" active-class="active" :to="{ name: 'admin_users' }">
                 {{ $t('users') }}
               </RouterLink>
             </div>
@@ -69,13 +69,13 @@
             </a>
             <div class="dropdown-menu dropdown-menu-end" :class="{ 'dropdown-menu-dark': darkMode }"
                  aria-labelledby="userDropdown">
-              <RouterLink class="dropdown-item" active-class="active" :to="{ name: 'user_preferences' }" exact>
+              <RouterLink class="dropdown-item" active-class="active" :to="{ name: 'user_preferences' }">
                 {{ $t('preferences') }}
               </RouterLink>
-              <RouterLink class="dropdown-item" active-class="active" :to="{ name: 'user_security' }" exact>
+              <RouterLink class="dropdown-item" active-class="active" :to="{ name: 'user_security' }">
                 {{ $t('security') }}
               </RouterLink>
-              <RouterLink class="dropdown-item" active-class="active" :to="{ name: 'user_privacy' }" exact>
+              <RouterLink class="dropdown-item" active-class="active" :to="{ name: 'user_privacy' }">
                 {{ $t('privacy') }}
               </RouterLink>
               <hr class="dropdown-divider">
@@ -98,7 +98,7 @@
               </div>
             </li>
             <li class="nav-item">
-              <RouterLink class="nav-link" active-class="active" :to="{ name: 'sign_up' }" exact>
+              <RouterLink class="nav-link" active-class="active" :to="{ name: 'sign_up' }">
                 {{ $t('sign_up') }}
               </RouterLink>
             </li>
@@ -144,43 +144,43 @@
       <ul class="nav flex-column">
         <li class="nav-item">
           <RouterLink class="nav-link" active-class="active" :to="{ name: 'live_tracker' }"
-                      data-bs-dismiss="offcanvas" exact>
+                      data-bs-dismiss="offcanvas">
             {{ $t('live_tracker') }}
           </RouterLink>
         </li>
         <li class="nav-item">
           <RouterLink class="nav-link" active-class="active" :to="{ name: 'database_aircrafts' }"
-                      data-bs-dismiss="offcanvas" exact>
+                      data-bs-dismiss="offcanvas">
             {{ $t('aircraft__p') }}
           </RouterLink>
         </li>
         <li class="nav-item">
           <RouterLink class="nav-link" active-class="active" :to="{ name: 'database_aircraft_types' }"
-                      data-bs-dismiss="offcanvas" exact>
+                      data-bs-dismiss="offcanvas">
             {{ $t('aircraft_types') }}
           </RouterLink>
         </li>
         <li class="nav-item">
           <RouterLink class="nav-link" active-class="active" :to="{ name: 'database_airlines' }"
-                      data-bs-dismiss="offcanvas" exact>
+                      data-bs-dismiss="offcanvas">
             {{ $t('airlines') }}
           </RouterLink>
         </li>
         <li class="nav-item">
           <RouterLink class="nav-link" active-class="active" :to="{ name: 'database_airports' }"
-                      data-bs-dismiss="offcanvas" exact>
+                      data-bs-dismiss="offcanvas">
             {{ $t('airports') }}
           </RouterLink>
         </li>
         <li class="nav-item">
           <RouterLink class="nav-link" active-class="active" :to="{ name: 'database_flights' }"
-                      data-bs-dismiss="offcanvas" exact>
+                      data-bs-dismiss="offcanvas">
             {{ $t('flights') }}
           </RouterLink>
         </li>
         <li class="nav-item">
           <RouterLink class="nav-link" active-class="active" :to="{ name: 'database_navaids' }"
-                      data-bs-dismiss="offcanvas" exact>
+                      data-bs-dismiss="offcanvas">
             {{ $t('navaids') }}
           </RouterLink>
         </li>
@@ -191,19 +191,19 @@
         <template v-if="user">
           <li class="nav-item">
             <RouterLink class="nav-link" active-class="active" :to="{ name: 'user_preferences' }"
-                        data-bs-dismiss="offcanvas" exact>
+                        data-bs-dismiss="offcanvas">
               {{ $t('preferences') }}
             </RouterLink>
           </li>
           <li class="nav-item">
             <RouterLink class="nav-link" active-class="active" :to="{ name: 'user_security' }"
-                        data-bs-dismiss="offcanvas" exact>
+                        data-bs-dismiss="offcanvas">
               {{ $t('security') }}
             </RouterLink>
           </li>
           <li class="nav-item">
             <RouterLink class="nav-link" active-class="active" :to="{ name: 'user_privacy' }"
-                        data-bs-dismiss="offcanvas" exact>
+                        data-bs-dismiss="offcanvas">
               {{ $t('privacy') }}
             </RouterLink>
           </li>
@@ -217,13 +217,13 @@
         <template v-else>
           <li class="nav-item">
             <RouterLink class="nav-link" active-class="active" :to="{ name: 'sign_in' }"
-                        data-bs-dismiss="offcanvas" exact>
+                        data-bs-dismiss="offcanvas">
               {{ $t('sign_in') }}
             </RouterLink>
           </li>
           <li class="nav-item">
             <RouterLink class="nav-link" active-class="active" :to="{ name: 'sign_up' }"
-                        data-bs-dismiss="offcanvas" exact>
+                        data-bs-dismiss="offcanvas">
               {{ $t('sign_up') }}
             </RouterLink>
           </li>
