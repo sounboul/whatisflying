@@ -62,6 +62,13 @@ export default {
     }
   },
   watch: {
+    '$i18n.locale': {
+      immediate: true,
+      handler (locale) {
+        const html = document.querySelector('html')
+        html.setAttribute('lang', locale)
+      }
+    },
     darkMode: {
       immediate: true,
       handler (darkMode) {
