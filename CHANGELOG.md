@@ -1,5 +1,13 @@
 # Changelog
 
+## Version 3.0.0
+
+- fix: Broken checkboxes (1847094).
+- fix: Localized dates are not reactive (a94bc8b).
+- fix: Offcanvas is not hidden upon navigation (77ff57e).
+- fix: Use of deprecated `exact` prop on router links (849c2ae).
+- fix: Missing `lang` attribute on HTML tag (884d963).
+
 ## Version 3.0.0-rc.2
 
 - fix: Broken template (922fe85).
