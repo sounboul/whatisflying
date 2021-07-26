@@ -1,0 +1,32 @@
+.map-search {
+  background: $white;
+  border: none;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  color: $body-color;
+  left: 10px;
+  position: absolute;
+  top: 10px;
+  width: 300px;
+}
+
+.map-search-results {
+  border: none;
+  box-shadow: $box-shadow;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+
+  li {
+    white-space: break-spaces;
+  }
+}
+
+[data-theme='dark'] {
+  .map-search {
+    background: $dark;
+    color: $light;
+  }
+}
