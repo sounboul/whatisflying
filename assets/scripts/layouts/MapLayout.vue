@@ -1,6 +1,9 @@
 <template>
   <div class="map-layout">
     <slot name="map"/>
+    <div class="map-search">
+      <slot name="search"/>
+    </div>
     <div class="map-controls">
       <slot name="controls"/>
     </div>

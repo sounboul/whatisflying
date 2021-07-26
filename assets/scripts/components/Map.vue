@@ -5,6 +5,10 @@
       <div class="map" id="map" :key="uuid"></div>
     </template>
 
+    <template #search>
+      <Search/>
+    </template>
+
     <template #controls>
       <BaseLayerSelector/>
       <DataLayersSelector/>
@@ -46,6 +50,7 @@ import DataLayersSelector from '@scripts/components/map/controls/DataLayersSelec
 import Filters from '@scripts/components/map/controls/Filters'
 import Options from '@scripts/components/map/controls/Options'
 import { useScaleLine } from '@scripts/components/map/controls/ScaleLine'
+import Search from '@scripts/components/map/controls/Search'
 import WeatherLayersSelector from '@scripts/components/map/controls/WeatherLayersSelector'
 import { useZoom } from '@scripts/components/map/controls/Zoom'
 import { useAircraftsLayer } from '@scripts/components/map/data/AircraftsLayer'
@@ -96,6 +101,7 @@ export default {
     NavaidsLegend,
     Options,
     PrecipitationsLegend,
+    Search,
     TemperatureLegend,
     WeatherLayersSelector,
     WindSpeedLegend
