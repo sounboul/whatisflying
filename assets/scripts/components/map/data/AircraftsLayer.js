@@ -269,20 +269,21 @@ export const useAircraftsLayer = (map, props, filters, selection, aircraftCache)
           })
 
           aircraftsSource.addFeatures(features)
-        })
 
-        refreshInterval.value = window.setInterval(() => {
-          const zoom = map.value.getView().getZoom()
-          aircraftsSource.forEachFeatureInExtent(extent, feature => {
-            const properties = feature.getProperties()
-            const { onGround, selected } = properties
-            if (!onGround && (zoom >= 9 || selected)) {
-              const aircraftCorrectedPosition = getAircraftCorrectedPosition(properties)
-              const coordinates = Projection.transform(aircraftCorrectedPosition, 'EPSG:4326', 'EPSG:3857')
-              feature.getGeometry().setCoordinates(coordinates)
-            }
-          })
-        }, 1000)
+          clearInterval(refreshInterval.value)
+          refreshInterval.value = window.setInterval(() => {
+            const zoom = map.value.getView().getZoom()
+            aircraftsSource.forEachFeatureInExtent(extent, feature => {
+              const properties = feature.getProperties()
+              const { onGround, selected } = properties
+              if (!onGround && (zoom >= 9 || selected)) {
+                const aircraftCorrectedPosition = getAircraftCorrectedPosition(properties)
+                const coordinates = Projection.transform(aircraftCorrectedPosition, 'EPSG:4326', 'EPSG:3857')
+                feature.getGeometry().setCoordinates(coordinates)
+              }
+            })
+          }, 1000)
+        })
       }
     })
 
