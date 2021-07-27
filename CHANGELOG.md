@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 3.1.0
+
+- feat: Add search box (53322c6).
+- fix: Refresh interval is not cleared (7f0783c).
+
 ## Version 3.0.0
 
 - fix: Broken checkboxes (1847094).
