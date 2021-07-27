@@ -43,22 +43,26 @@ export default {
       }
     },
     search (query) {
+      clearTimeout(this.timeout)
+
       this.cancelToken?.cancel('Concurrent request')
       this.cancelToken = CancelToken.source()
       this.showResults = false
 
       if (query.length) {
-        Geocode.search({
-          cancelToken: this.cancelToken.token,
-          params: {
-            q: query
-          }
-        }).then(results => {
-          this.results = results
-          if (results.length) {
-            this.showResults = true
-          }
-        })
+        this.timeout = setTimeout(() => {
+          Geocode.search({
+            cancelToken: this.cancelToken.token,
+            params: {
+              q: query
+            }
+          }).then(results => {
+            this.results = results
+            if (results.length) {
+              this.showResults = true
+            }
+          })
+        }, 500)
       }
     }
   },
@@ -72,10 +76,12 @@ export default {
       cancelToken: null,
       query: null,
       results: null,
-      showResults: false
+      showResults: false,
+      timeout: null
     }
   },
   unmounted () {
+    clearTimeout(this.timeout)
     this.cancelToken?.cancel('Component unmounted')
   }
 }
