@@ -49,7 +49,7 @@ abstract class AbstractImportCommand extends Command
         $io = new SymfonyStyle($input, $output);
         $stopwatch = new Stopwatch();
 
-        if ($input->getOption('truncate')) {
+        if ((bool)$input->getOption('truncate')) {
             $io->writeln('Deleting existing data…');
 
             $connection = $this->entityManager->getConnection();
@@ -72,7 +72,7 @@ abstract class AbstractImportCommand extends Command
             $io->success('Existing data has been deleted.');
         }
 
-        if ($input->getOption('delete')) {
+        if ((bool)$input->getOption('delete')) {
             $io->writeln('Deleting existing data…');
 
             /** @phpstan-ignore-next-line */
@@ -139,7 +139,7 @@ abstract class AbstractImportCommand extends Command
                         $violation->getMessage()
                     );
 
-                    if (!$input->getOption('no-warning')) {
+                    if (!(bool)$input->getOption('no-warning')) {
                         $this->logger->warning($message);
                         $io->warning($message);
                     }
@@ -162,7 +162,7 @@ abstract class AbstractImportCommand extends Command
 
             $imported++;
 
-            if ($input->getOption('no-batch') || $imported % (int)$input->getOption('batch-size') === 0) {
+            if ((bool)$input->getOption('no-batch') || $imported % (int)$input->getOption('batch-size') === 0) {
                 $this->entityManager->flush();
                 $this->entityManager->clear();
 
