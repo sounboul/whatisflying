@@ -1,9 +1,14 @@
 # Changelog
 
+## Version 3.1.1
+
+- fix: PHPStan analysis fails (1540a41).
+- fix: Generic L2P/T aircraft icon is too big (26c8f95).
+
 ## Version 3.1.0
 
 - feat: Add search box (53322c6).
-- fix: Refresh interval is not cleared (7f0783c).
+- fix: Refresh interval is not cleared (87bd009).
 
 ## Version 3.0.0
 
