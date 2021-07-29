@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 3.1.2
+
+- fix: Trying to access property of a null variable (16f03b1).
+
 ## Version 3.1.1
 
 - fix: PHPStan analysis fails (1540a41).
