@@ -51,7 +51,7 @@ final class UserCreate extends Command
             ->setPrivacyPolicy(true)
             ->setUsername($input->getArgument('username'));
 
-        if ($input->getOption('admin')) {
+        if ((bool)$input->getOption('admin')) {
             $user->addRole('ROLE_ADMIN');
         }
 
