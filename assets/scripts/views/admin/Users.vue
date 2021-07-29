@@ -109,11 +109,11 @@
                   </td>
                   <td>
 
-                    <button v-if="_user.locked && _user.id !== user.id" class="btn btn-sm btn-outline-success me-1"
+                    <button v-if="_user.locked && _user.id !== user?.id" class="btn btn-sm btn-outline-success me-1"
                             data-bs-toggle="modal" :data-bs-target="`#unlock${_user.id}`">
                       <FontAwesomeIcon :icon="['far', 'lock-open']" fixed-width aria-hidden="true"/>
                     </button>
-                    <button v-else-if="_user.id !== user.id" class="btn btn-sm btn-outline-danger me-1"
+                    <button v-else-if="_user.id !== user?.id" class="btn btn-sm btn-outline-danger me-1"
                             data-bs-toggle="modal" :data-bs-target="`#lock${_user.id}`">
                       <FontAwesomeIcon :icon="['far', 'lock']" fixed-width aria-hidden="true"/>
                     </button>
@@ -165,7 +165,7 @@
     <template v-if="usersLoaded">
       <template v-for="_user in users['hydra:member']" :key="_user.id">
 
-        <Modal v-if="!_user.locked && _user.id !== user.id" :id="`lock${_user.id}`">
+        <Modal v-if="!_user.locked && _user.id !== user?.id" :id="`lock${_user.id}`">
 
           <template #title>
             {{ $t('lock_account') }}
@@ -183,14 +183,15 @@
             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
               {{ $t('cancel') }}
             </button>
-            <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal" @click="lockAccount(_user.id)">
+            <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"
+                    @click="lockAccount(_user.id)">
               {{ $t('lock_account') }}
             </button>
           </template>
 
         </Modal>
 
-        <Modal v-if="_user.locked && _user.id !== user.id" :id="`unlock${_user.id}`">
+        <Modal v-if="_user.locked && _user.id !== user?.id" :id="`unlock${_user.id}`">
 
           <template #title>
             {{ $t('unlock_account') }}
