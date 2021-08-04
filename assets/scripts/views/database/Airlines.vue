@@ -343,7 +343,7 @@ export default {
           this.page = 1
         }
 
-        this.$router.push({
+        this.$router.replace({
           name: 'database_airlines',
           query: {
             ...filters,
@@ -356,7 +356,7 @@ export default {
     order: {
       deep: true,
       handler (order) {
-        this.$router.push({
+        this.$router.replace({
           name: 'database_airlines',
           query: {
             ...this.filters,

@@ -318,7 +318,7 @@ export default {
           this.page = 1
         }
 
-        this.$router.push({
+        this.$router.replace({
           name: 'database_navaids',
           query: {
             ...filters,
@@ -331,7 +331,7 @@ export default {
     order: {
       deep: true,
       handler (order) {
-        this.$router.push({
+        this.$router.replace({
           name: 'database_navaids',
           query: {
             ...this.filters,
