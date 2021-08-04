@@ -1,3 +1,4 @@
+import { NotFound } from '@scripts/http-errors'
 import Client from '@scripts/services/opensky-network/client'
 
 class AircraftState {
@@ -9,7 +10,12 @@ class AircraftState {
           icao24: icao24bitAddress
         }
       }).then(response => {
-        resolve(this.parseAircraftState(response.data.states[0]))
+        const aircraftStates = response.data.states || []
+        if (!aircraftStates.length) {
+          reject(new NotFound())
+        }
+
+        resolve(this.parseAircraftState(aircraftStates[0]))
       }).catch(error => {
         reject(error)
       })
