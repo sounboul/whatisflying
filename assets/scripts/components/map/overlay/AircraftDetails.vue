@@ -640,7 +640,10 @@ export default {
         if (error instanceof NotFound) {
           this.aircraft = null
           this.aircraftLoaded = true
+          return
         }
+
+        throw error
       })
     },
     loadAircraftState () {
@@ -677,7 +680,10 @@ export default {
         if (error instanceof NotFound) {
           this.flight = null
           this.flightLoaded = true
+          return
         }
+
+        throw error
       })
     },
     refreshAircraftState () {
