@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 3.1.3
+
+- fix: Filtering/sorting results duplicates history entries (5440a07).
+- fix: Trying to access property of a null variable (0b0bc17).
+
 ## Version 3.1.2
 
 - fix: Trying to access property of a null variable (16f03b1).
