@@ -1,5 +1,4 @@
 import { getErrorFromResponse } from '@scripts/http-errors'
-import { captureException } from '@sentry/browser'
 import Axios from 'axios'
 
 const MAX_RETRIES = 3
@@ -30,7 +29,7 @@ Client.interceptors.response.use(response => response, error => new Promise((res
     reject(getErrorFromResponse(error.response))
   }
 
-  captureException(error)
+  reject(error)
 }))
 
 export default Client
