@@ -793,6 +793,7 @@ export default {
       }).catch(error => {
         if (error.response?.status === 404) {
           this.$router.replace({ name: 'not_found' })
+          return
         }
 
         throw error
