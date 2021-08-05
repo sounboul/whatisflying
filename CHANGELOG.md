@@ -1,5 +1,12 @@
 # Changelog
 
+## Version 3.1.4
+
+- fix: Missing return statement (eeca8b8).
+- fix: Unhandled exceptions not bubbling up (0760502).
+- fix: Unhandled NotFound exceptions (3043516).
+- fix: Unhandled timeout errors (86cd7ac).
+
 ## Version 3.1.3
 
 - fix: Filtering/sorting results duplicates history entries (5440a07).
