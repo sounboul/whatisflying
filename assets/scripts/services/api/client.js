@@ -1,5 +1,6 @@
 import { getErrorFromResponse } from '@scripts/http-errors'
 import store from '@scripts/store'
+import { captureException } from '@sentry/browser'
 import Axios from 'axios'
 import qs from 'qs'
 
@@ -61,6 +62,11 @@ Client.interceptors.response.use(response => response, error => new Promise((res
 
   if (error.response) {
     reject(getErrorFromResponse(error.response))
+  }
+
+  if (error.message.match(/timeout/)) {
+    captureException(error)
+    return
   }
 
   reject(error)
