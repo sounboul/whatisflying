@@ -656,6 +656,12 @@ export default {
       }).then(aircraftState => {
         this.aircraftState = aircraftState
         this.aircraftStateLoaded = true
+      }).catch(error => {
+        if (error instanceof NotFound) {
+          return
+        }
+
+        throw error
       })
 
       this.aircraftStateRefreshInterval = window.setInterval(this.refreshAircraftState, 5000)
@@ -695,6 +701,12 @@ export default {
       }).then(aircraftState => {
         this.aircraftState = aircraftState
         this.aircraftStateLoaded = true
+      }).catch(error => {
+        if (error instanceof NotFound) {
+          return
+        }
+
+        throw error
       })
     }
   },
