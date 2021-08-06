@@ -24,7 +24,7 @@
         "@openfonts/fira-sans_latin": "^1.44.1",
         "@openfonts/heebo_latin": "^1.44.2",
         "@popperjs/core": "^2.9.3",
-        "@sentry/browser": "^6.10.0",
+        "@sentry/browser": "^6.11.0",
         "@sentry/tracing": "^6.10.0",
         "@vueform/multiselect": "^1.5.0",
         "arc": "^0.1.1",
