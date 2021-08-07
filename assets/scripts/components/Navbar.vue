@@ -143,44 +143,37 @@
     <div class="offcanvas-body">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <RouterLink class="nav-link" active-class="active" :to="{ name: 'live_tracker' }"
-                      data-bs-dismiss="offcanvas">
+          <RouterLink class="nav-link" active-class="active" :to="{ name: 'live_tracker' }">
             {{ $t('live_tracker') }}
           </RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink class="nav-link" active-class="active" :to="{ name: 'database_aircrafts' }"
-                      data-bs-dismiss="offcanvas">
+          <RouterLink class="nav-link" active-class="active" :to="{ name: 'database_aircrafts' }">
             {{ $t('aircraft__p') }}
           </RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink class="nav-link" active-class="active" :to="{ name: 'database_aircraft_types' }"
-                      data-bs-dismiss="offcanvas">
+          <RouterLink class="nav-link" active-class="active" :to="{ name: 'database_aircraft_types' }">
             {{ $t('aircraft_types') }}
           </RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink class="nav-link" active-class="active" :to="{ name: 'database_airlines' }"
-                      data-bs-dismiss="offcanvas">
+          <RouterLink class="nav-link" active-class="active" :to="{ name: 'database_airlines' }">
             {{ $t('airlines') }}
           </RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink class="nav-link" active-class="active" :to="{ name: 'database_airports' }"
-                      data-bs-dismiss="offcanvas">
+          <RouterLink class="nav-link" active-class="active" :to="{ name: 'database_airports' }">
             {{ $t('airports') }}
           </RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink class="nav-link" active-class="active" :to="{ name: 'database_flights' }"
-                      data-bs-dismiss="offcanvas">
+          <RouterLink class="nav-link" active-class="active" :to="{ name: 'database_flights' }">
             {{ $t('flights') }}
           </RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink class="nav-link" active-class="active" :to="{ name: 'database_navaids' }"
-                      data-bs-dismiss="offcanvas">
+          <RouterLink class="nav-link" active-class="active" :to="{ name: 'database_navaids' }">
             {{ $t('navaids') }}
           </RouterLink>
         </li>
@@ -190,25 +183,22 @@
 
         <template v-if="user">
           <li class="nav-item">
-            <RouterLink class="nav-link" active-class="active" :to="{ name: 'user_preferences' }"
-                        data-bs-dismiss="offcanvas">
+            <RouterLink class="nav-link" active-class="active" :to="{ name: 'user_preferences' }">
               {{ $t('preferences') }}
             </RouterLink>
           </li>
           <li class="nav-item">
-            <RouterLink class="nav-link" active-class="active" :to="{ name: 'user_security' }"
-                        data-bs-dismiss="offcanvas">
+            <RouterLink class="nav-link" active-class="active" :to="{ name: 'user_security' }">
               {{ $t('security') }}
             </RouterLink>
           </li>
           <li class="nav-item">
-            <RouterLink class="nav-link" active-class="active" :to="{ name: 'user_privacy' }"
-                        data-bs-dismiss="offcanvas">
+            <RouterLink class="nav-link" active-class="active" :to="{ name: 'user_privacy' }">
               {{ $t('privacy') }}
             </RouterLink>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" role="button" data-bs-dismiss="offcanvas" @click="logout">
+            <a class="nav-link" href="#" role="button" @click="logout">
               {{ $t('sign_out') }}
             </a>
           </li>
@@ -216,14 +206,12 @@
 
         <template v-else>
           <li class="nav-item">
-            <RouterLink class="nav-link" active-class="active" :to="{ name: 'sign_in' }"
-                        data-bs-dismiss="offcanvas">
+            <RouterLink class="nav-link" active-class="active" :to="{ name: 'sign_in' }">
               {{ $t('sign_in') }}
             </RouterLink>
           </li>
           <li class="nav-item">
-            <RouterLink class="nav-link" active-class="active" :to="{ name: 'sign_up' }"
-                        data-bs-dismiss="offcanvas">
+            <RouterLink class="nav-link" active-class="active" :to="{ name: 'sign_up' }">
               {{ $t('sign_up') }}
             </RouterLink>
           </li>
@@ -298,11 +286,10 @@ export default {
     }
   },
   mounted () {
+    const offcanvas = new Offcanvas(document.querySelector('#offcanvas'))
     const links = document.querySelectorAll('#offcanvas .nav-link')
     links.forEach(link => {
       link.addEventListener('click', () => {
-        const element = document.querySelector('#offcanvas')
-        const offcanvas = new Offcanvas(element)
         offcanvas.hide()
       })
     })
