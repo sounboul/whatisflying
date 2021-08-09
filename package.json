@@ -47,7 +47,7 @@
         "uuid": "^8.3.2",
         "vue": "^3.1.4",
         "vue-i18n": "^9.1.7",
-        "vue-router": "^4.0.10",
+        "vue-router": "^4.0.11",
         "vuex": "^4.0.2",
         "vuex-composition-helpers": "^2.0.0",
         "vuex-persist": "^3.1.3"
