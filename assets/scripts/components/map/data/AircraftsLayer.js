@@ -248,7 +248,6 @@ export const useAircraftsLayer = (map, props, filters, selection, aircraftCache)
 
             feature.setId(icao24bitAddress)
             feature.setProperties(aircraftState)
-            feature.setStyle(feature => generateAircraftStyle(feature))
 
             if (icao24bitAddress in aircraftCache.value) {
               const { aircraftType, description } = aircraftCache.value[icao24bitAddress]
@@ -306,6 +305,7 @@ export const useAircraftsLayer = (map, props, filters, selection, aircraftCache)
     const aircraftsLayer = new Layer.Vector({
       extent: Projection.transformExtent([-180, -90, 180, 90], 'EPSG:4326', 'EPSG:3857'),
       source: aircraftsSource,
+      style: feature => generateAircraftStyle(feature),
       visible: props.forceShowAircrafts || showAircrafts.value,
       zIndex: 200
     })
