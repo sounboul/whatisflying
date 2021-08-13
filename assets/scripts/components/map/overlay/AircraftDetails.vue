@@ -297,7 +297,7 @@
                     {{ aircraft.icao24bitAddress }}
                   </RouterLink>
                   <template v-else>
-                    {{ selection.value.aircraft.icao24bitAddress }}
+                    {{ selection.value.aircraft }}
                   </template>
 
                 </template>
