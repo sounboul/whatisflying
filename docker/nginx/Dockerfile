@@ -1,4 +1,4 @@
-FROM nginx:1.19
+FROM nginx:1.21
 
 COPY config/nginx.conf /etc/nginx/nginx.conf
 COPY config/dev.whatisflying.com.conf /etc/nginx/conf.d/dev.whatisflying.com.conf

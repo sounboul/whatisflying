@@ -19,7 +19,7 @@ services:
                 ipv4_address: 172.8.1.2
 
     nginx:
-        image: whatisflying/nginx:1.19
+        image: whatisflying/nginx:1.21
         build: docker/nginx
         container_name: whatisflying-nginx
         working_dir: /usr/share/nginx/html
