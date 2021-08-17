@@ -45,7 +45,7 @@
         "simplebar": "^5.3.5",
         "spdx-license-list": "^6.4.0",
         "uuid": "^8.3.2",
-        "vue": "^3.2.2",
+        "vue": "^3.2.3",
         "vue-i18n": "^9.1.7",
         "vue-router": "^4.0.11",
         "vuex": "^4.0.2",
