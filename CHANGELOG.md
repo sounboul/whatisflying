@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 3.1.5
+
+- fix: Broken offcanvas links after updating Bootstrap to 5.1 (d5688b0).
+- fix: ICAO 24-bit address not showing in some cases (711d22f).
+
 ## Version 3.1.4
 
 - fix: Missing return statement (eeca8b8).
