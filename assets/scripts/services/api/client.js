@@ -39,6 +39,11 @@ Client.interceptors.response.use(response => response, error => new Promise((res
     return
   }
 
+  if (error.response?.status === 429) {
+    captureException(error)
+    return
+  }
+
   if (error.response?.status === 401 && 'authorization' in error.config.headers) {
     if (store.getters.token) {
       const { refreshToken } = store.getters.token
