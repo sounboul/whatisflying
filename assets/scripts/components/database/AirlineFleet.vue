@@ -1,6 +1,13 @@
 <template>
   <div class="card card-body">
-    <h3 class="card-title">{{ $t('fleet') }}</h3>
+    <div class="d-flex justify-content-between">
+      <h3 class="card-title">{{ $t('fleet') }}</h3>
+      <RouterLink :to="{ name: 'database_aircrafts', query: {
+          'operator.icaoCode': [ $props.airline ] } }">
+        <span class="visually-hidden">{{ $t('maximize') }}</span>
+        <FontAwesomeIcon :icon="['far', 'arrows-maximize']" aria-hidden="true"/>
+      </RouterLink>
+    </div>
 
     <template v-if="!aircraftsLoaded || aircrafts['hydra:totalItems']">
       <ListHeader :items="aircrafts" :items-loaded="aircraftsLoaded"/>
@@ -142,6 +149,7 @@ import ContentLoader from '@scripts/components/ContentLoader'
 import ListHeader from '@scripts/components/ListHeader'
 import NoDataAvailable from '@scripts/components/NoDataAvailable'
 import Pagination from '@scripts/components/Pagination'
+import FontAwesomeIcon from '@scripts/fontawesome'
 import { Airline } from '@scripts/services/api'
 import { CancelToken } from 'axios'
 
@@ -150,6 +158,7 @@ export default {
   components: {
     ColumnHeader,
     ContentLoader,
+    FontAwesomeIcon,
     ListHeader,
     NoDataAvailable,
     Pagination

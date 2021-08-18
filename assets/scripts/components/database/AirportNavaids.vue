@@ -1,6 +1,13 @@
 <template>
   <div class="card card-body">
-    <h2>{{ $t('navaids') }}</h2>
+    <div class="d-flex justify-content-between">
+      <h2>{{ $t('navaids') }}</h2>
+      <RouterLink :to="{ name: 'database_navaids', query: {
+          'airport.icaoCode': [ $props.airport ] } }">
+        <span class="visually-hidden">{{ $t('maximize') }}</span>
+        <FontAwesomeIcon :icon="['far', 'arrows-maximize']" aria-hidden="true"/>
+      </RouterLink>
+    </div>
 
     <template v-if="navaidsLoaded">
 
@@ -137,6 +144,7 @@ import ContentLoader from '@scripts/components/ContentLoader'
 import NavaidIcon from '@scripts/components/NavaidIcon'
 import NavaidType from '@scripts/components/NavaidType'
 import NoDataAvailable from '@scripts/components/NoDataAvailable'
+import FontAwesomeIcon from '@scripts/fontawesome'
 import { Navaid } from '@scripts/services/api'
 import { CancelToken } from 'axios'
 import Masonry from 'masonry-layout'
@@ -146,6 +154,7 @@ export default {
   name: 'AirportNavaids',
   components: {
     ContentLoader,
+    FontAwesomeIcon,
     NavaidIcon,
     NavaidType,
     NoDataAvailable
