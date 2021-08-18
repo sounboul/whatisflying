@@ -29,7 +29,7 @@ Client.interceptors.response.use(response => response, error => new Promise((res
     reject(getErrorFromResponse(error.response))
   }
 
-  if (error.message.match(/timeout/)) {
+  if (error.message.match(/Timeout|Component unmounted/i)) {
     captureException(error)
     return
   }
