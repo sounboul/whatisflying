@@ -168,6 +168,8 @@
     "fixes": "Fixes",
     "fleet": "Fleet",
     "flight": "Flight",
+    "flight_arrivals": "Flight arrivals",
+    "flight_departures": "Flight departures",
     "flight_information_region": "Flight Information Region",
     "flight_number": "Flight number",
     "flights": "Flights",

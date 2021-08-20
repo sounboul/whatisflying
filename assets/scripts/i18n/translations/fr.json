@@ -168,6 +168,8 @@
     "fixes": "Points fixes",
     "fleet": "Flotte",
     "flight": "Vol",
+    "flight_arrivals": "Vols à l'arrivée",
+    "flight_departures": "Vols au départ",
     "flight_information_region": "Région d'information de vol",
     "flight_number": "Numéro de vol",
     "flights": "Vols",
