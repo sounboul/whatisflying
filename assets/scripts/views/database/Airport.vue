@@ -197,6 +197,12 @@
         <div class="col-12">
           <AirportNavaids :airport="icaoCode"/>
         </div>
+        <div class="col-12">
+          <AirportDepartures :airport="icaoCode"/>
+        </div>
+        <div class="col-12">
+          <AirportArrivals :airport="icaoCode"/>
+        </div>
       </div>
     </template>
   </DefaultLayout>
@@ -206,6 +212,8 @@
 import ContentLoader from '@scripts/components/ContentLoader'
 import CountryFlag from '@scripts/components/CountryFlag'
 import CountryName from '@scripts/components/CountryName'
+import AirportArrivals from '@scripts/components/database/AirportArrivals'
+import AirportDepartures from '@scripts/components/database/AirportDepartures'
 import AirportNavaids from '@scripts/components/database/AirportNavaids'
 import AirportRadioFrequencies from '@scripts/components/database/AirportRadioFrequencies'
 import AirportRunways from '@scripts/components/database/AirportRunways'
@@ -220,6 +228,8 @@ import { mapActions } from 'vuex'
 export default {
   name: 'Airport',
   components: {
+    AirportArrivals,
+    AirportDepartures,
     AirportWeather,
     AirportNavaids,
     AirportRadioFrequencies,

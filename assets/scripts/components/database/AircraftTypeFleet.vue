@@ -3,7 +3,7 @@
     <div class="d-flex justify-content-between">
       <h3 class="card-title">{{ $t('fleet') }}</h3>
       <RouterLink :to="{ name: 'database_aircrafts', query: {
-        'aircraftType.icaoCode': [ $props.aircraftType ] } }">
+        'aircraftType.icaoCode': [ aircraftType ] } }">
         <span class="visually-hidden">{{ $t('maximize') }}</span>
         <FontAwesomeIcon :icon="['far', 'arrows-maximize']" aria-hidden="true"/>
       </RouterLink>
