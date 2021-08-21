@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 3.2.0
+
+- feat: Show flight departures & arrivals on airport page (30217f0).
+- feat: Allow maximizing embeded lists (a1a5f64).
+- fix: Unhandled `Component unmounted` exceptions (9405440).
+
 ## Version 3.1.5
 
 - fix: Broken offcanvas links after updating Bootstrap to 5.1 (d5688b0).
