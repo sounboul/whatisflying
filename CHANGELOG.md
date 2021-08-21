@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 3.2.1
+
+- fix: HTTP 500 error (d7643b8).
+- fix: Undefined package version constant (9d5b226).
+
 ## Version 3.2.0
 
 - feat: Show flight departures & arrivals on airport page (30217f0).
