@@ -348,8 +348,10 @@ export const useAircraftsLayer = (map, props, filters, selection, aircraftCache)
   watch(() => selection.value.aircraft, aircraft => {
     if (!aircraft) {
       currentAircraftsSelect.value?.getFeatures().forEach(feature => {
-        currentAircraftsSelect.value?.getFeatures().remove(feature)
-        feature.setProperties({ selected: false })
+        if (feature) {
+          currentAircraftsSelect.value?.getFeatures().remove(feature)
+          feature.setProperties({ selected: false })
+        }
       })
     }
   })
