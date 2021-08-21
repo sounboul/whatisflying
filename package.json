@@ -3,7 +3,7 @@
     "name": "@jbroutier/whatisflying",
     "description": "Real time aircraft tracker and aeronautical database.",
     "homepage": "https://whatisflying.com",
-    "version": "3.1.5",
+    "version": "3.2.0",
     "license": "MIT",
     "author": {
         "name": "Jérémie BROUTIER",
