@@ -89,7 +89,7 @@ export default {
   },
   computed: {
     appVersion () {
-      return process.env.npm_package_version
+      return process.env.NPM_PACKAGE_VERSION
     }
   }
 }

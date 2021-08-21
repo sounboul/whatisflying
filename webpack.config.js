@@ -35,6 +35,8 @@ Encore
     options.__VUE_OPTIONS_API__ = true
     options.__VUE_PROD_DEVTOOLS__ = false
 
+    options['process.env.NPM_PACKAGE_VERSION'] = JSON.stringify(process.env.npm_package_version)
+
     const envFiles = ['.env', '.env.local']
     envFiles.forEach(envFile => {
       const envFilePath = path.resolve(__dirname, envFile)

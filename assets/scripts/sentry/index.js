@@ -20,7 +20,7 @@ export default {
           tracingOrigins: [/^(dev\.)?whatisflying\.com/]
         })
       ],
-      release: `whatisflying@${process.env.npm_package_version}`,
+      release: `whatisflying@${process.env.NPM_PACKAGE_VERSION}`,
       tracesSampleRate: 1.0
     })
 
