@@ -7,6 +7,7 @@ const FaviconsPlugin = require('favicons-webpack-plugin')
 const HtmlPlugin = require('html-webpack-plugin')
 const StylelintPlugin = require('stylelint-webpack-plugin')
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
+const SentryPlugin = require('@sentry/webpack-plugin')
 
 if (!Encore.isRuntimeEnvironmentConfigured()) {
   Encore.configureRuntimeEnvironment(process.env.NODE_ENV || 'development')
@@ -33,9 +34,6 @@ Encore
   .configureDefinePlugin(options => {
     options.__VUE_OPTIONS_API__ = true
     options.__VUE_PROD_DEVTOOLS__ = false
-
-    options['process.env.NPM_PACKAGE_NAME'] = JSON.stringify(process.env.npm_package_name)
-    options['process.env.NPM_PACKAGE_VERSION'] = JSON.stringify(process.env.npm_package_version)
 
     const envFiles = ['.env', '.env.local']
     envFiles.forEach(envFile => {
@@ -110,6 +108,18 @@ Encore
     '@scripts': path.resolve(__dirname, 'assets/scripts'),
     '@styles': path.resolve(__dirname, 'assets/styles')
   })
+
+if (Encore.isProduction()) {
+  Encore.addPlugin(new SentryPlugin({
+    include: [
+      'assets',
+      'public/assets'
+    ],
+    org: 'jbroutier',
+    project: 'whatisflying',
+    release: `whatisflying@${process.env.npm_package_version}`
+  }))
+}
 
 try {
   require.resolve('@fortawesome/pro-light-svg-icons')

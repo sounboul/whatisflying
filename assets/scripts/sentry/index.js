@@ -1,11 +1,12 @@
+import router from '@scripts/router'
 import store from '@scripts/store'
-import { captureException, init, setTag, setUser } from '@sentry/browser'
 import { BrowserTracing } from '@sentry/tracing/esm/browser'
+import { captureException, init, setTag, setUser, vueRouterInstrumentation } from '@sentry/vue'
 
 export default {
-  name: 'Sentry',
   install: app => {
     init({
+      app,
       debug: process.env.NODE_ENV === 'development',
       dsn: process.env.SENTRY_DSN,
       ignoreErrors: [
@@ -15,12 +16,11 @@ export default {
       ],
       integrations: [
         new BrowserTracing({
-          tracingOrigins: [
-            /^(dev\.)?whatisflying\.com/
-          ]
+          routingInstrumentation: vueRouterInstrumentation(router),
+          tracingOrigins: [/^(dev\.)?whatisflying\.com/]
         })
       ],
-      release: process.env.NPM_PACKAGE_VERSION,
+      release: `whatisflying@${process.env.npm_package_version}`,
       tracesSampleRate: 1.0
     })
 

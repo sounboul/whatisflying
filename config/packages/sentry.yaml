@@ -1,5 +1,9 @@
+parameters:
+    env(COMPOSER_JSON): 'composer.json'
+
 sentry:
     dsn: '%env(SENTRY_DSN)%'
     register_error_listener: false
     options:
         environment: '%kernel.environment%'
+        release: 'whatisflying@%env(key:version:json:file:COMPOSER_JSON)%'
