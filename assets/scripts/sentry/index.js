@@ -11,6 +11,7 @@ export default {
       dsn: process.env.SENTRY_DSN,
       ignoreErrors: [
         /^Network error$/i,
+        /^Non-Error exception captured$/i,
         /^Request aborted$/i,
         /^ResizeObserver/i
       ],
