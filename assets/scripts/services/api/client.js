@@ -1,6 +1,6 @@
 import { getErrorFromResponse } from '@scripts/http-errors'
 import store from '@scripts/store'
-import { captureException } from '@sentry/browser'
+import { captureException } from '@sentry/vue'
 import Axios from 'axios'
 import qs from 'qs'
 

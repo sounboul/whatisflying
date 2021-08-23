@@ -1,5 +1,5 @@
 import { getErrorFromResponse } from '@scripts/http-errors'
-import { captureException } from '@sentry/browser'
+import { captureException } from '@sentry/vue'
 import Axios from 'axios'
 
 const MAX_RETRIES = 3
