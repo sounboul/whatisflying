@@ -33,7 +33,7 @@ export default {
   },
   computed: {
     backgroundImage () {
-      return require(`@images/header/${Math.randomInt(1, 5)}.webp`)
+      return require(`@images/header/${Math.randomInt(1, 8)}.webp`)
     }
   }
 }
