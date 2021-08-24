@@ -1,5 +1,5 @@
 <template>
-  <div v-if="selection.value?.fix" class="card card-body">
+  <div v-if="selection?.fix" class="card card-body">
     <div class="d-flex justify-content-between align-items-start">
 
       <template v-if="fixLoaded">
@@ -11,7 +11,7 @@
         </ContentLoader>
       </template>
 
-      <a class="ms-2 text-reset" href="#" @click.prevent="delete selection.value.fix">
+      <a class="ms-2 text-reset" href="#" @click.prevent="delete selection.fix">
         <span class="visually-hidden">{{ $t('close_the_fix_details') }}</span>
         <FontAwesomeIcon :icon="['fal', 'xmark']" size="2x" aria-hidden="true"/>
       </a>
@@ -110,7 +110,7 @@ export default {
       this.cancelToken = CancelToken.source()
       this.fixLoaded = false
 
-      Fix.getFix(this.selection.value?.fix, {
+      Fix.getFix(this.selection?.fix, {
         cancelToken: this.cancelToken.token
       }).then(fix => {
         this.fix = fix
@@ -122,7 +122,7 @@ export default {
     selection: {
       deep: true,
       handler (selection) {
-        if (selection.value?.fix) {
+        if (selection?.fix) {
           this.loadFix()
         }
       }

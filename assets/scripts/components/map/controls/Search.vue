@@ -31,12 +31,12 @@ export default {
     centerMap (position, mapView) {
       this.showResults = false
 
-      const view = this.map.value.getView()
+      const view = this.map.getView()
       view.setCenter(Projection.transform([position.lng, position.lat], 'EPSG:4326', 'EPSG:3857'))
 
       if (mapView) {
         view.fit(Projection.transformExtent([mapView.west, mapView.south, mapView.east, mapView.north], 'EPSG:4326', 'EPSG:3857'), {
-          size: this.map.value.getSize()
+          size: this.map.getSize()
         })
       } else {
         view.setZoom(11)

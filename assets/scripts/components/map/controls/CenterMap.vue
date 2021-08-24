@@ -1,5 +1,5 @@
 <template>
-  <button v-if="geolocation.value" class="map-control" type="button"
+  <button v-if="geolocation" class="map-control" type="button"
           :title="$t('center_the_map_on_my_position')" @click="centerMap">
     <FontAwesomeIcon :icon="['fal', 'location-crosshairs']" aria-hidden="true"/>
   </button>
@@ -19,8 +19,8 @@ export default {
   ],
   methods: {
     centerMap () {
-      const view = this.map.value.getView()
-      view.setCenter(this.geolocation.value)
+      const view = this.map.getView()
+      view.setCenter(this.geolocation)
       view.setZoom(11)
     }
   }

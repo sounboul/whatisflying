@@ -1,5 +1,5 @@
 <template>
-  <div v-if="selection.value?.navaid" class="card card-body">
+  <div v-if="selection?.navaid" class="card card-body">
     <div class="d-flex justify-content-between align-items-start">
 
       <template v-if="navaidLoaded">
@@ -13,7 +13,7 @@
         </ContentLoader>
       </template>
 
-      <a class="ms-2 text-reset" href="#" @click.prevent="delete selection.value.navaid">
+      <a class="ms-2 text-reset" href="#" @click.prevent="delete selection.navaid">
         <span class="visually-hidden">{{ $t('close_the_navaid_details') }}</span>
         <FontAwesomeIcon :icon="['fal', 'xmark']" size="2x" aria-hidden="true"/>
       </a>
@@ -315,7 +315,7 @@ export default {
       this.cancelToken = CancelToken.source()
       this.navaidLoaded = false
 
-      Navaid.getNavaid(this.selection.value.navaid, {
+      Navaid.getNavaid(this.selection.navaid, {
         cancelToken: this.cancelToken.token
       }).then(navaid => {
         this.navaid = navaid
@@ -327,7 +327,7 @@ export default {
     selection: {
       deep: true,
       handler (selection) {
-        if (selection.value?.navaid) {
+        if (selection?.navaid) {
           this.loadNavaid()
         }
       }

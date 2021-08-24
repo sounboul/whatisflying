@@ -1,8 +1,8 @@
 <template>
-  <div v-if="selection.value?.aircraft" class="card position-relative">
+  <div v-if="selection?.aircraft" class="card position-relative">
     <div class="position-absolute top-0 end-0 p-3" style="z-index: 900;">
       <button class="map-control map-control-small" :aria-label="$t('close_the_aircraft_details')"
-              @click="delete selection.value.aircraft">
+              @click="delete selection.aircraft">
         <FontAwesomeIcon :icon="['fal', 'xmark']" aria-hidden="true"/>
       </button>
     </div>
@@ -297,7 +297,7 @@
                     {{ aircraft.icao24bitAddress }}
                   </RouterLink>
                   <template v-else>
-                    {{ selection.value.aircraft }}
+                    {{ selection.aircraft }}
                   </template>
 
                 </template>
@@ -631,7 +631,7 @@ export default {
       this.aircraftCancelToken = CancelToken.source()
       this.aircraftLoaded = false
 
-      Aircraft.getAircraft(this.selection.value.aircraft, {
+      Aircraft.getAircraft(this.selection.aircraft, {
         cancelToken: this.aircraftCancelToken.token
       }).then(aircraft => {
         this.aircraft = aircraft
@@ -651,7 +651,7 @@ export default {
       this.aircraftStateCancelToken = CancelToken.source()
       this.aircraftStateLoaded = false
 
-      AircraftState.getAircraftState(this.selection.value.aircraft, {
+      AircraftState.getAircraftState(this.selection.aircraft, {
         cancelToken: this.aircraftStateCancelToken.token
       }).then(aircraftState => {
         this.aircraftState = aircraftState
@@ -671,13 +671,13 @@ export default {
       this.flightCancelToken = CancelToken.source()
       this.flightLoaded = false
 
-      if (!this.selection.value.flight) {
+      if (!this.selection.flight) {
         this.flight = null
         this.flightLoaded = true
         return
       }
 
-      Flight.getFlight(this.selection.value.flight, {
+      Flight.getFlight(this.selection.flight, {
         cancelToken: this.flightCancelToken?.token
       }).then(flight => {
         this.flight = flight
@@ -696,7 +696,7 @@ export default {
       this.aircraftStateCancelToken?.cancel('Concurrent request')
       this.aircraftStateCancelToken = CancelToken.source()
 
-      AircraftState.getAircraftState(this.selection.value.aircraft, {
+      AircraftState.getAircraftState(this.selection.aircraft, {
         cancelToken: this.aircraftStateCancelToken.token
       }).then(aircraftState => {
         this.aircraftState = aircraftState
@@ -716,12 +716,12 @@ export default {
       handler (selection) {
         clearInterval(this.aircraftStateRefreshInterval)
 
-        if (selection.value?.aircraft) {
+        if (selection?.aircraft) {
           this.loadAircraft()
           this.loadAircraftState()
         }
 
-        if (selection.value?.flight) {
+        if (selection?.flight) {
           this.loadFlight()
         }
       }

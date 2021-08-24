@@ -14,6 +14,7 @@ import { createApp } from 'vue'
 require.context('@images', true)
 
 const app = createApp(App)
+app.config.unwrapInjectedRef = true
 app.config.globalProperties.$dt = DateTime
 app.config.globalProperties.$m = Math
 app.config.globalProperties.$morse = text => encode(text)

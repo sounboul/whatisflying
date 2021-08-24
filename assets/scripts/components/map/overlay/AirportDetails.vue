@@ -1,5 +1,5 @@
 <template>
-  <div v-if="selection.value?.airport" class="card card-body">
+  <div v-if="selection?.airport" class="card card-body">
     <div class="d-flex justify-content-between align-items-start">
 
       <template v-if="airportLoaded">
@@ -13,7 +13,7 @@
         </ContentLoader>
       </template>
 
-      <a class="ms-2 text-reset" href="#" @click.prevent="delete selection.value.airport">
+      <a class="ms-2 text-reset" href="#" @click.prevent="delete selection.airport">
         <span class="visually-hidden">{{ $t('close_the_airport_details') }}</span>
         <FontAwesomeIcon :icon="['fal', 'xmark']" size="2x" aria-hidden="true"/>
       </a>
@@ -515,7 +515,7 @@ export default {
       this.airportCancelToken = CancelToken.source()
       this.airportLoaded = false
 
-      Airport.getAirport(this.selection.value.airport, {
+      Airport.getAirport(this.selection.airport, {
         cancelToken: this.airportCancelToken.token
       }).then(airport => {
         this.airport = airport
@@ -527,7 +527,7 @@ export default {
       this.airportFrequenciesCancelToken = CancelToken.source()
       this.airportFrequenciesLoaded = false
 
-      Airport.getAirportFrequencies(this.selection.value.airport, {
+      Airport.getAirportFrequencies(this.selection.airport, {
         cancelToken: this.airportFrequenciesCancelToken.token,
         params: {
           pagination: false
@@ -542,7 +542,7 @@ export default {
       this.airportRunwaysCancelToken = CancelToken.source()
       this.airportRunwaysLoaded = false
 
-      Airport.getAirportRunways(this.selection.value.airport, {
+      Airport.getAirportRunways(this.selection.airport, {
         cancelToken: this.airportRunwaysCancelToken.token,
         params: {
           pagination: false
@@ -557,7 +557,7 @@ export default {
       this.weatherCancelToken = CancelToken.source()
       this.weatherLoaded = false
 
-      Airport.getAirport(this.selection.value.airport, {
+      Airport.getAirport(this.selection.airport, {
         cancelToken: this.weatherCancelToken.token,
         params: {
           properties: ['latitude', 'longitude']
@@ -579,14 +579,14 @@ export default {
   },
   watch: {
     '$i18n.locale' () {
-      if (this.user && this.selection.value?.airport) {
+      if (this.user && this.selection?.airport) {
         this.loadWeather()
       }
     },
     selection: {
       deep: true,
       handler (selection) {
-        if (selection.value?.airport) {
+        if (selection?.airport) {
           this.loadAirport()
           this.loadAirportFrequencies()
           this.loadAirportRunways()
@@ -598,7 +598,7 @@ export default {
       }
     },
     user (user) {
-      if (user && this.selection.value?.airport) {
+      if (user && this.selection?.airport) {
         this.loadWeather()
       }
     }
