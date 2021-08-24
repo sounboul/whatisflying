@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'App',
@@ -56,6 +56,7 @@ export default {
     ])
   },
   methods: {
+    ...mapActions(['setLocale']),
     getAbsoluteUrl (path) {
       const url = new URL(path, process.env.BASE_URL)
       return url.toString()
@@ -80,7 +81,7 @@ export default {
       immediate: true,
       handler (user) {
         if (user) {
-          this.$i18n.locale = user.locale
+          this.setLocale(user.locale)
         }
       }
     }
