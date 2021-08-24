@@ -4,7 +4,7 @@
   <teleport to="head">
     <link rel="canonical" :href="getAbsoluteUrl($route.path)">
 
-    <meta name="description" :content="metaDescription">
+    <meta name="description" :content="metaDescription || $t('meta_description.default')">
     <meta name="robots" :content="metaRobots">
 
     <meta name="og:type" content="website">
