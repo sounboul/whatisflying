@@ -26,7 +26,7 @@ export const useRoadmapLayer = map => {
   const getSourceUrl = () => {
     const tileSize = pixelRatio > 1 ? 512 : 256
     const resolution = ROADMAP_RESOLUTIONS[pixelRatio]
-    const language = ROADMAP_LANGUAGES[locale]
+    const language = ROADMAP_LANGUAGES[locale.value]
     const style = darkMode.value ? 'night' : 'day'
 
     return `https://{1-4}.base.maps.ls.hereapi.com/maptile/2.1/maptile/newest/normal.${style}/{z}/{x}/{y}/` +
@@ -51,7 +51,7 @@ export const useRoadmapLayer = map => {
       roadmapLayer.setVisible(baseLayer === 'roadmap')
     })
 
-    watch(darkMode, () => {
+    watch([darkMode, locale], () => {
       const source = roadmapLayer.getSource()
       source.setUrl(getSourceUrl())
       source.refresh()
