@@ -67,6 +67,11 @@ export default {
     }
   },
   watch: {
+    '$i18n.locale' () {
+      if (this.showResults) {
+        this.search(this.query)
+      }
+    },
     query (value) {
       this.search(value)
     }

@@ -1,6 +1,12 @@
 import { getErrorFromResponse } from '@scripts/http-errors'
+import store from '@scripts/store'
 import { captureException } from '@sentry/vue'
 import Axios from 'axios'
+
+const HERE_LANGUAGES = {
+  en: 'en-GB',
+  fr: 'fr-FR'
+}
 
 const MAX_RETRIES = 3
 
@@ -9,6 +15,11 @@ const Client = Axios.create({
   params: {
     apiKey: process.env.HERE_API_KEY
   }
+})
+
+Client.interceptors.request.use(request => {
+  request.params.lang = HERE_LANGUAGES[store.getters.locale]
+  return request
 })
 
 Client.interceptors.response.use(response => response, error => new Promise((resolve, reject) => {
