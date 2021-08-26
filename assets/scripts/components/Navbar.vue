@@ -178,6 +178,18 @@
           </RouterLink>
         </li>
       </ul>
+
+      <template v-if="user && user.roles.includes('ROLE_ADMIN')">
+        <hr>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <RouterLink class="nav-link" active-class="active" :to="{ name: 'admin_users' }">
+              {{ $t('users') }}
+            </RouterLink>
+          </li>
+        </ul>
+      </template>
+
       <hr>
       <ul class="nav flex-column">
 
